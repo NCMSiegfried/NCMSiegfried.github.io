@@ -90,11 +90,12 @@ body {
 }
 
 hr {
+  width:50%;
   margin: 1rem 0;
   color: inherit;
   background-color: currentColor;
   border: 0;
-  opacity: 0.25;
+  opacity: 0.7;
 }
 
 hr:not([size]) {
@@ -120,7 +121,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: calc(1.475rem + 2.7vw);
+  font-size: calc(2.5rem + 2.7vw);
 }
 @media (min-width: 1200px) {
   h2, .h2 {
@@ -640,6 +641,7 @@ progress {
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
+  background-color:#f7f9fb ;
 }
 
 @media (min-width: 576px) {
@@ -7359,7 +7361,7 @@ textarea.form-control-lg {
 }
 
 .mb-0 {
-  margin-bottom: 0 !important;
+  margin-bottom: 0.5 !important;
 }
 
 .mb-1 {
