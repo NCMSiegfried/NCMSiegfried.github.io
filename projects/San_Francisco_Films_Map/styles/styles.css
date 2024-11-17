@@ -54,7 +54,7 @@ transition-duration: 100ms;
   display: block;
   margin: 0 auto;
   width: 90%;
-  max-height: 33em;
+  max-height: 45em;
   min-height: 15em;
   object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
