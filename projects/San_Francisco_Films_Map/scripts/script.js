@@ -110,7 +110,6 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
-  console.log(slides)
   slides[slideIndex-1].style.display = "block";
   timer = setTimeout(showSlides, 8000);
   resetHighlight();
@@ -380,111 +379,112 @@ function resetHighlight() {
 function sidePanelHome() {
     var sidePanel = document.getElementById('sidePanel');
     var root = "https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/"
+    var tail = "?raw=true"
     sidePanel.innerHTML = `
         <h2>San Francisco Films Map</h2>
         <p style="color: white;">Click on any marker to view film details.</p>
         <div class="slideShowContainer">
             <div class="slide fade">
                 <div class="numbertext">1 / 15</div>
-                <img id="homeImage" src="${root}BullitChaseIMG.jpg?raw=true" alt="Image 1" onclick="ExpandImage('${root}BullitChaseIMG.jpg?raw=true')">
+                <img id="homeImage" src="${root}BullitChaseIMG.jpg${tail}" alt="Image 1" onclick="ExpandImage('${root}BullitChaseIMG.jpg${tail}')">
                 </br>
                 <strong>Bullit, 1968</strong>
                 <p>The best ever car chase scene? Debatable.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">2 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/ExperimentInTerror_FishermansWharf.jpeg" alt="Image 2" onclick="ExpandImage('images/_HomePanelImages/ExperimentInTerror_FishermansWharf.jpeg')">
+                <img id="homeImage" src="${root}ExperimentInTerror_FishermansWharf.jpeg${tail}" alt="Image 2" onclick="ExpandImage('${root}ExperimentInTerror_FishermansWharf.jpeg${tail}')">
                 </br>
                 <strong>Experiment in Terror, 1962</strong>
                 <p>Blake Edward's thriller noir showing Fisherman's Wharf and Pier 49 back when it was actually used for fishing.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">3 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/Vertigo_Fort_Point.jpg" alt="Image 3" onclick="ExpandImage('images/_HomePanelImages/Vertigo_Fort_Point.jpg')">
+                <img id="homeImage" src="${root}Vertigo_Fort_Point.jpg${tail}" alt="Image 3" onclick="ExpandImage('${root}Vertigo_Fort_Point.jpg${tail}')">
                 </br>
                 <strong>Vertigo, 1958</strong>
                 <p>James Stewart Heroically lifting Kim Novak out from the San Francisco Bay Waters.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">4 / 15</div>
-                <img id="homeImage" src="https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png" alt="Image 4" onclick="ExpandImage('https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png')">
+                <img id="homeImage" src="${root}AlwaysBeMyMaybe_Pier7.png${tail}" alt="Image 4" onclick="ExpandImage('${root}AlwaysBeMyMaybe_Pier7.png${tail}')">
                 </br>
                 <strong>Always Be My Maybe, 2019</strong>
                 <p>Ali Wong and Randall Park star in this romance... Maybe?</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">5 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/ChanIsMissing.png" alt="Image 5" onclick="ExpandImage('images/_HomePanelImages/ChanIsMissing.png')">
+                <img id="homeImage" src="${root}ChanIsMissing.png${tail}" alt="Image 5" onclick="ExpandImage('${root}ChanIsMissing.png${tail}')">
                 </br>
                 <strong>Chan is Missing, 1982</strong>
                 <p>This Imperial Palace Restaurant (Previously the Golden Dragon Restaurant) has a had a gang-related shooting killing 5 and injuring 11 (1977), was temporarilly shut down in 2006 for health code violations, and currently holds a 2.9 star rating on Google.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">6 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/HaroldMaude_SutroBaths.png" alt="Image 6" onclick="ExpandImage('images/_HomePanelImages/HaroldMaude_SutroBaths.png')">
+                <img id="homeImage" src="${root}HaroldMaude_SutroBaths.png${tail}" alt="Image 6" onclick="ExpandImage('${root}HaroldMaude_SutroBaths.png${tail}')">
                 </br>
                 <strong>Harold and Maude, 1971</strong>
                 <p>"Crazy parasite! Commie Bastard! Get the hell out of here!" - Harold</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">7 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/HERBIERIDESAGAINIMG.jpg" alt="Image 7" onclick="ExpandImage('images/_HomePanelImages/HERBIERIDESAGAINIMG.jpg')">
+                <img id="homeImage" src="${root}HERBIERIDESAGAINIMG.jpg${tail}" alt="Image 7" onclick="ExpandImage('${root}HERBIERIDESAGAINIMG.jpg${tail}')">
                 </br>
                 <strong>Herbie Rides Again, 1974</strong>
                 <p>Mrs.Steinmetz taking her shortcut to Vern's Market while Mr.Hawk's henchmen follow closely behind, on foot.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">8 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/houseOnTelegraphHill.jpeg" alt="Image 8" onclick="ExpandImage('images/_HomePanelImages/houseOnTelegraphHill.jpeg')">
+                <img id="homeImage" src="${root}houseOnTelegraphHill.jpeg${tail}" alt="Image 8" onclick="ExpandImage('${root}houseOnTelegraphHill.jpeg${tail}')">
                 </br>
                 <strong>House on Telegraph Hill, 1951</strong>
                 <p>The base of Coit Tower - one of the best views of the City?</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">9 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/InvasionOfTheBodySnatchers_DeptofHealth.png" alt="Image 9" onclick="ExpandImage('images/_HomePanelImages/InvasionOfTheBodySnatchers_DeptofHealth.png')">
+                <img id="homeImage" src="${root}InvasionOfTheBodySnatchers_DeptofHealth.png${tail}" alt="Image 9" onclick="ExpandImage('${root}InvasionOfTheBodySnatchers_DeptofHealth.png${tail}')">
                 </br>
                 <strong>Invasion of the Body Snatchers, 1978</strong>
                 <p>Brooke Adams going into the Department of Public Health building before the Aliens start replacing people's bodies.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">10 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/PalJoey_SprecklesMansion.jpeg" alt="Image 10" onclick="ExpandImage('images/_HomePanelImages/PalJoey_SprecklesMansion.jpeg')">
+                <img id="homeImage" src="${root}PalJoey_SprecklesMansion.jpeg${tail}" alt="Image 10" onclick="ExpandImage('${root}PalJoey_SprecklesMansion.jpeg${tail}')">
                 </br>
                 <strong>Pal Joey, 1957</strong>
                 <p>Frank Sinatra and Kim Novak's stroll up Pacific Heights.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">11 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/PursuitofHappyness_GlenParkSubway.png" alt="Image 11" onclick="ExpandImage('images/_HomePanelImages/PursuitofHappyness_GlenParkSubway.png')">
+                <img id="homeImage" src="${root}PursuitofHappyness_GlenParkSubway.png${tail}" alt="Image 11" onclick="ExpandImage('${root}PursuitofHappyness_GlenParkSubway.png${tail}')">
                 </br>
                 <strong>The Pursuit of Happyness, 2006</strong>
                 <p>Known for its brutalist architecture: Glen Park Subway Station.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">12 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/StarTrekGoldenGateBridge.png" alt="Image 12" onclick="ExpandImage('images/_HomePanelImages/StarTrekGoldenGateBridge.png')">
+                <img id="homeImage" src="${root}StarTrekGoldenGateBridge.png${tail}" alt="Image 12" onclick="ExpandImage('${root}StarTrekGoldenGateBridge.png${tail}')">
                 </br>
                 <strong>Star Trek IV: The Voyage Home, 1986</strong>
                 <p>Spock (Leonard Nimoy) and Kirk (William Shatner) travel back in time to save humanity and locate humpback whales.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">13 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/STEVEMCQUEEN_TaylorSt.jpg" alt="Image 13" onclick="ExpandImage('images/_HomePanelImages/STEVEMCQUEEN_TaylorSt.jpg')">
+                <img id="homeImage" src="${root}STEVEMCQUEEN_TaylorSt.jpg${tail}" alt="Image 13" onclick="ExpandImage('${root}STEVEMCQUEEN_TaylorSt.jpg${tail}')">
                 </br>
                 <strong>Bullit, 1968</strong>
                 <p>A popular area on Nob Hill which include film locations for San Andreas (2015), Hereafter (2010), and The Wedding Planner (2001).</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">14 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/TheConversation_FinancialDistrict.jpg" alt="Image 14" onclick="ExpandImage('images/_HomePanelImages/TheConversation_FinancialDistrict.jpg')">
+                <img id="homeImage" src="${root}TheConversation_FinancialDistrict.jpg${tail}" alt="Image 14" onclick="ExpandImage('${root}TheConversation_FinancialDistrict.jpg${tail}')">
                 </br>
                 <strong>The Conversation, 1974</strong>
                 <p>Harry Caul (Gene Hackman) and Martin Stett (Harrison Ford) overlooking the Financial District.</p>
             </div>
             <div class="slide fade">
                 <div class="numbertext">15 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/TheLineUpWarMemoralOpera.jpeg" alt="Image 15" onclick="ExpandImage('images/_HomePanelImages/TheLineUpWarMemoralOpera.jpeg')">
+                <img id="homeImage" src="${root}TheLineUpWarMemoralOpera.jpeg${tail}" alt="Image 15" onclick="ExpandImage('${root}TheLineUpWarMemoralOpera.jpeg${tail}')">
                 </br>
                 <strong>The Lineup, 1958</strong>
                 <p>Lieutenant Guthrie using a police call box back in the day.</p>
