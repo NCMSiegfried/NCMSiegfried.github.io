@@ -405,7 +405,7 @@ function sidePanelHome() {
             </div>
             <div class="slide fade">
                 <div class="numbertext">4 / 15</div>
-                <img id="homeImage" src="https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/dae4f6f660c9125550ae0eaef4cb2a65c952d9f3/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png" alt="Image 4" onclick="ExpandImage('images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png')">
+                <img id="homeImage" src="https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png" alt="Image 4" onclick="ExpandImage('images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png')">
                 </br>
                 <strong>Always Be My Maybe, 2019</strong>
                 <p>Ali Wong and Randall Park star in this romance... Maybe?</p>
