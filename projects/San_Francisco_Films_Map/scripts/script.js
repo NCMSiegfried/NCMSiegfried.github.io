@@ -827,7 +827,7 @@ function showNameDetails(properties, coords, nconst, namesData) {
     }
 }
 // LOAD NAMES DATA JSON
-$.getJSON("https://raw.githubusercontent.com/NCMSiegfried/SF-FILMS-DASHBOARD/refs/heads/main/map/data/Names.json", function(data) {
+$.getJSON("https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/data/Names.json", function(data) {
     namesData = data;
     console.log("Additional data loaded:", namesData);
 }).fail(function(jqXHR, textStatus, errorThrown) {
@@ -835,7 +835,7 @@ $.getJSON("https://raw.githubusercontent.com/NCMSiegfried/SF-FILMS-DASHBOARD/ref
 });
 
 // LOAD GEOJSON
-$.getJSON("https://raw.githubusercontent.com/NCMSiegfried/SF-FILMS-DASHBOARD/main/map/data/data.geojson", function(data) {
+$.getJSON("https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/data/data.geojson", function(data) {
     geojsonData = data;
 
     var geojsonLayer = L.geoJSON(data, {
