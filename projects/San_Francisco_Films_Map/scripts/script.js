@@ -110,6 +110,7 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
+  console.log(slides)
   slides[slideIndex-1].style.display = "block";
   timer = setTimeout(showSlides, 8000);
   resetHighlight();
@@ -384,7 +385,7 @@ function sidePanelHome() {
         <div class="slideShowContainer">
             <div class="slide fade">
                 <div class="numbertext">1 / 15</div>
-                <img id="homeImage" src="images/_HomePanelImages/BullitChaseIMG.jpg" alt="Image 1" onclick="ExpandImage('images/_HomePanelImages/BullitChaseIMG.jpg')">
+                <img id="homeImage" src="https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/BullitChaseIMG.jpg?raw=true" alt="Image 1" onclick="ExpandImage('https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/BullitChaseIMG.jpg?raw=true')">
                 </br>
                 <strong>Bullit, 1968</strong>
                 <p>The best ever car chase scene? Debatable.</p>
@@ -405,7 +406,7 @@ function sidePanelHome() {
             </div>
             <div class="slide fade">
                 <div class="numbertext">4 / 15</div>
-                <img id="homeImage" src="https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png" alt="Image 4" onclick="ExpandImage('images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png')">
+                <img id="homeImage" src="https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png" alt="Image 4" onclick="ExpandImage('https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io/refs/heads/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/AlwaysBeMyMaybe_Pier7.png')">
                 </br>
                 <strong>Always Be My Maybe, 2019</strong>
                 <p>Ali Wong and Randall Park star in this romance... Maybe?</p>
