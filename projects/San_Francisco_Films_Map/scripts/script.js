@@ -835,7 +835,7 @@ $.getJSON("https://raw.githubusercontent.com/NCMSiegfried/NCMSiegfried.github.io
 });
 
 // LOAD GEOJSON
-$.getJSON("https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/data/data.geojson", function(data) {
+$.getJSON("data/data.geojson", function(data) {
     geojsonData = data;
 
     var geojsonLayer = L.geoJSON(data, {
