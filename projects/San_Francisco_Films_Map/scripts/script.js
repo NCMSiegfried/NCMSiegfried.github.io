@@ -379,13 +379,14 @@ function resetHighlight() {
 // UPDATE HOME SIDE PANEL FUNCTION
 function sidePanelHome() {
     var sidePanel = document.getElementById('sidePanel');
+    var root = "https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/"
     sidePanel.innerHTML = `
         <h2>San Francisco Films Map</h2>
         <p style="color: white;">Click on any marker to view film details.</p>
         <div class="slideShowContainer">
             <div class="slide fade">
                 <div class="numbertext">1 / 15</div>
-                <img id="homeImage" src="https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/BullitChaseIMG.jpg?raw=true" alt="Image 1" onclick="ExpandImage('https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/BullitChaseIMG.jpg?raw=true')">
+                <img id="homeImage" src="${root}BullitChaseIMG.jpg?raw=true" alt="Image 1" onclick="ExpandImage('${root}BullitChaseIMG.jpg?raw=true')">
                 </br>
                 <strong>Bullit, 1968</strong>
                 <p>The best ever car chase scene? Debatable.</p>
