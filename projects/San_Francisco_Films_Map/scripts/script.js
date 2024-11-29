@@ -46,6 +46,23 @@ var highlightMarkerOptions = {
     opacity: 1,
     fillOpacity: 1
 };
+var transparentMarkerOptions = {
+    radius: 3,
+    fillColor: "#8c2760", //dark purple
+    color: "#000",
+    weight: 1,
+    opacity: 0.3,
+    fillOpacity: 0.3
+};
+
+var otherMarkerOptions = {
+    radius: 3,
+    fillColor: "#ff199b", //bright pink
+    color: "#bfa719",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 1
+};
 //CREATE VARIABLES
 var highlightedLayer = null;
 var popUpLayer = null;
@@ -54,9 +71,10 @@ var popup;
 
 var geojsonData;
 var namesData;
+var titleLayer;
 
 var markers = {};
-
+var titlePoints = [];
 //FILTER VARIABLES
 var uniqueDirectors = new Set();
 var uniqueProdCompanies = new Set();
@@ -336,9 +354,14 @@ function filterMarkers(director, prodCompany, distributor, writer, genre, star) 
             }
             // ADD CLICK TO HIGHLIGHT AND UPDATE SIDE PANEL
             layer.on('click', function () {
+                titlePoints = [];
                 resetHighlight();
+                resetTransparency();
+                transparentNonMatchingMarkers(layer.feature.properties.Title);
                 highlightedLayer = layer;
                 layer.setStyle(highlightMarkerOptions);
+                console.log(markers)
+                reloadFilteredLayer(titlePoints)
                 var coords = feature.geometry.coordinates;
                 var properties = feature.properties;
                 updateSidePanel(properties, coords, namesData);
@@ -353,14 +376,6 @@ function filterMarkers(director, prodCompany, distributor, writer, genre, star) 
     populateDropdown("writerFilter", uniqueWritersSelected, selectedWriter);
     populateDropdown("genreFilter", uniqueGenresSelected, selectedGenre);
     populateDropdown("starFilter", uniqueStarsSelected, selectedStar);
-
-    // USED FOR DEBUGGING
-    console.log("Filtered Production Companies:", uniqueProdCompaniesSelected);
-    console.log("Filtered Directors:", uniqueDirectorsSelected);
-    console.log("Filtered Distributor:", uniqueDistributorsSelected);
-    console.log("Filtered Writer:", uniqueWritersSelected);
-    console.log("Filtered Genre:", uniqueGenresSelected);
-    console.log("Filtered Star:", uniqueStarsSelected);
 }
 
 function resetHighlight() {
@@ -495,6 +510,7 @@ function sidePanelHome() {
         <div id="filterContainer">
             <select class= "dropdown hidden" id="directorFilter">
             </select>
+
             <select class= "dropdown hidden" id="prodCompanyFilter">
             </select>
             <select class= "dropdown hidden" id="distributorFilter">
@@ -583,6 +599,10 @@ function sidePanelHome() {
     });
     clearTimeout(timer);
     showSlides(slideIndex);
+    resetTransparency();
+    if (titleLayer) {
+        map.removeLayer(titleLayer);
+    }
 }
 
 function updateSidePanel(properties, coords, namesData) {
@@ -880,10 +900,15 @@ $.getJSON("data/data.geojson", function(data) {
             }
             // ADD EVENT LISTENER TO EACH FEATURE
             layer.on('click', function () {
+                titlePoints = [];
                 map.closePopup();
                 resetHighlight();
+                resetTransparency();
+                transparentNonMatchingMarkers(layer.feature.properties.Title);
                 highlightedLayer = layer;
                 layer.setStyle(highlightMarkerOptions);
+                console.log(titlePoints)
+                reloadFilteredLayer(titlePoints)
                 var coords = feature.geometry.coordinates;
                 var properties = feature.properties;
                 // UPDATE SIDE PANEL WHEN POINT IS CLICKED
@@ -895,7 +920,39 @@ $.getJSON("data/data.geojson", function(data) {
 }).fail(function() {
     console.error('Error loading GeoJSON file');
 });
+//TURNS OTHER POINTS WITHOUT MATCHING TITLE TRANSPARENT AND SAVES POINTS WITH MATCHING TITLE IN "titlePoints" array
+function transparentNonMatchingMarkers(title) {
+    for (const key in markers) {
+        if (markers[key].feature.properties.Title !== title) {
+        markers[key].setStyle(transparentMarkerOptions); // Highlight matching markers
+        } else {
+        titlePoints.push(markers[key])
+        }
+    };
+}
+// Function to reload a new layer with the filtered points
+function reloadFilteredLayer(titlePoints) {
+    // Remove existing filtered layer if present
+    if (titleLayer) {
+        map.removeLayer(titleLayer);
+    }
 
+    // Create a new layer group for the filtered points
+    titleLayer = L.layerGroup(
+        titlePoints.map(marker =>
+            L.circleMarker(marker.getLatLng(), otherMarkerOptions, {interactive:false})
+            )
+        );
+
+    // Add the new layer to the map
+    titleLayer.addTo(map);
+}
+//RESET TRANSPARENT LAYER
+function resetTransparency() {
+    for (const key in markers) {
+        markers[key].setStyle(defaultMarkerOptions);
+    };
+}
 //EXPAND SLIDESHOW IMAGE
 function ExpandImage(imgsrc) {
   //document.getElementById("expandImage").style.display = 'block';
