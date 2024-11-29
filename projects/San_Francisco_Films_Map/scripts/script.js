@@ -369,11 +369,6 @@ function resetHighlight() {
         highlightedLayer = null;
     }
 }
-//function onEachFeature(feature, layer) {
-//    if (feature.properties && feature.properties.popupContent) {
-//        layer.bindPopup(feature.properties.popupContent);
-//    }
-//}
 
 // UPDATE HOME SIDE PANEL FUNCTION
 function sidePanelHome() {
