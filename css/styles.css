@@ -11242,3 +11242,7 @@ hr {
     justify-content: center;
     align-items: center;
 }
+
+.subheading{
+    font-size:large;
+}
