@@ -7,6 +7,13 @@
 // Scripts
 // 
 
+// CREATE VARIABLES FOR PROJECTS SECTION
+const africaMap = document.getElementById('africaImage');
+
+// Paths for static image and GIF
+const africaMapStatic = 'assets/svg/Africa Map.svg';
+const africaMapGif = 'assets/gif/AfricaMap.gif';
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -57,3 +64,17 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+//CREATE A FUNCTION THAT MAKES IMAGE TURN INTO GIF ON HOVER
+//INPUTS: OBJECT ID, SVG VARIABLE, GIF VARIABLE
+function gifOnHover(object, svg, gif){
+    object.addEventListener('mouseenter', () => {
+        object.src = gif;
+    });
+
+    // Revert to static image when hover ends
+    object.addEventListener('mouseleave', () => {
+        object.src = svg;
+    });
+}
+gifOnHover(africaMap, africaMapStatic, africaMapGif);
+
