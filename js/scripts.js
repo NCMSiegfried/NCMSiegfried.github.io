@@ -9,10 +9,20 @@
 
 // CREATE VARIABLES FOR PROJECTS SECTION
 const africaMap = document.getElementById('africaImage');
-
-// Paths for static image and GIF
 const africaMapStatic = 'assets/svg/Africa Map.svg';
 const africaMapGif = 'assets/gif/AfricaMap.gif';
+
+const duluthMap = document.getElementById('duluthImage');
+const duluthMapStatic = 'assets/svg/Duluth Land Analysis.svg';
+const duluthMapGif = 'assets/gif/DuluthProject.gif';
+
+const interstateMap = document.getElementById('interstatetopImage')
+const interstateMapStatic = 'assets/svg/Interstate Topology Urban Morphology.svg';
+const interstateMapGif = 'assets/gif/UrbanMorphology.gif';
+
+const sfFilmsMap = document.getElementById('sfFilmsImage')
+const sfFilmsMapStatic = 'assets/svg/SF Films Map.svg';
+const sfFilmsMapGif = 'assets/gif/sfFilmsMap.gif';
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -76,5 +86,9 @@ function gifOnHover(object, svg, gif){
         object.src = svg;
     });
 }
+
 gifOnHover(africaMap, africaMapStatic, africaMapGif);
+gifOnHover(duluthMap, duluthMapStatic, duluthMapGif);
+gifOnHover(interstateMap, interstateMapStatic, interstateMapGif);
+gifOnHover(sfFilmsMap, sfFilmsMapStatic, sfFilmsMapGif);
 
