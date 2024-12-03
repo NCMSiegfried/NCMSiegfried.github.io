@@ -74,6 +74,9 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+
 //CREATE A FUNCTION THAT MAKES IMAGE TURN INTO GIF ON HOVER
 //INPUTS: OBJECT ID, SVG VARIABLE, GIF VARIABLE
 function gifOnHover(object, svg, gif){

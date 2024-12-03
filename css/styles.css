@@ -11249,9 +11249,4 @@ hr {
 .project-img{
     background-color:#333;
 }
-.hover-gif:hover {
-    background-image: url('assets/gif/AfricaMap.gif');
-}
-.static:hover {
-  opacity:0;
-}
+
