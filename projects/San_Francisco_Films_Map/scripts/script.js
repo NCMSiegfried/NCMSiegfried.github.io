@@ -652,6 +652,7 @@ function updateSidePanel(properties, coords, namesData) {
 
     // BACK BUTTON
     document.getElementById('back-button').addEventListener('click', function() {
+        map.closePopup();
         sidePanelHome();
         resetHighlight();
     });
