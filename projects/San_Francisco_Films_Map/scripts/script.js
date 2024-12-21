@@ -391,8 +391,11 @@ function sidePanelHome() {
     var root = "https://github.com/NCMSiegfried/NCMSiegfried.github.io/blob/main/projects/San_Francisco_Films_Map/images/_HomePanelImages/"
     var tail = "?raw=true"
     sidePanel.innerHTML = `
-        <h2>San Francisco Films Map</h2>
-        <p style="color: white;">Click on any marker to view film details.</p>
+        <div id="svg-container" style="width: 100%; height: auto;">
+            <object type="image/svg+xml" data="assets/svg/side_panel_title.svg" style="width: 100%; height: auto;"></object>
+        </div>
+        <hr style="border: none; height: 1px; background: black; margin: 20px 0;">
+        </br>
         <div class="slideShowContainer">
             <div class="slide fade">
                 <div class="numbertext">1 / 15</div>
@@ -506,6 +509,7 @@ function sidePanelHome() {
 
         </div>
         </br>
+        <p style="color: white;">Click on any marker to view film details.</p>
         <p style="color: white;">Or add a filter</p>
         <div id="filterContainer">
             <select class= "dropdown hidden" id="directorFilter">
