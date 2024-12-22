@@ -11276,7 +11276,7 @@ hr {
 span-initial {
     border-right: .05em solid;
 }
-span {
+#typing-caret {
   border-right: .05em solid;
   animation: caret 1s steps(1) infinite;
 }
@@ -11290,12 +11290,14 @@ span.finished {
     border-color: transparent;
   }
 }
+#animate{
+    opacity: 0;
+}
 .slide-in {
     opacity: 0;
     transform: translateX(-100%);
     transform: rotateX(90deg);
-    animation: flipIn 1s ease-out forwards;
-    animation-delay: 2.3s;
+    animation: flipIn 2s ease-out forwards;
 }
 
 @keyframes flipIn {

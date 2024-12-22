@@ -24,23 +24,37 @@ const sfFilmsMap = document.getElementById('sfFilmsImage')
 const sfFilmsMapStatic = 'assets/svg/SF Films Map.svg';
 const sfFilmsMapGif = 'assets/gif/sfFilmsMap.gif';
 
+// TYPESCRIPT ANIMATION
 document.addEventListener('DOMContentLoaded', function(event) {
-  var dataText = ["Hello!"];
+  const backgroundImageUrl = "assets/svg/background - web size.svg";
+
+  function waitForBackgroundImage(imageUrl, callback) {
+    const img = new Image();
+    img.onload = function() {
+      console.log("Background image loaded.");
+      callback();
+    };
+    img.onerror = function() {
+      console.error("Error loading background image.");
+    };
+    img.src = imageUrl; // Preload the background image
+  }
 
   function typeWriter(text, i, fnCallback) {
     if (i < text.length) {
-      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span id="typing-caret" aria-hidden="true"></span>';
       setTimeout(function() {
         typeWriter(text, i + 1, fnCallback);
-      }, 120); // Slower typing speed
+      }, 150); // Typing speed
     } else {
-      // Add the "finished" class to stop blinking when done
+      // Stop blinking when done
       const span = document.querySelector("h1 span");
       if (span) span.classList.add("finished");
     }
   }
 
   function StartTextAnimation(i) {
+    const dataText = ["Hello!"];
     if (i < dataText.length) {
       typeWriter(dataText[i], 0, function() {
         if (i + 1 < dataText.length) {
@@ -54,11 +68,55 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
   }
 
-  // Start the text animation after a 2-second delay
-  setTimeout(function() {
-    StartTextAnimation(0);
-  }, 800);
+  // Wait for background image to load before starting animation
+  waitForBackgroundImage(backgroundImageUrl, function() {
+    setTimeout(function() {
+      StartTextAnimation(0);
+
+      // Add the slide-in animation
+      const animatedElement = document.getElementById("animate");
+      if (animatedElement) {
+        setTimeout(() => {
+          animatedElement.classList.add("slide-in");
+        }, 2000); // Adjust timing as needed
+      }
+    }, 800); // Initial Delay
+  });
 });
+
+//document.addEventListener('DOMContentLoaded', function(event) {
+//  var dataText = ["Hello!"];
+//
+//  function typeWriter(text, i, fnCallback) {
+//    if (i < text.length) {
+//      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span id="typing-caret" aria-hidden="true"></span>';
+//      setTimeout(function() {
+//        typeWriter(text, i + 1, fnCallback);
+//      }, 150); // typing speed
+//    } else {
+//      //stop blinking when done
+//      const span = document.querySelector("h1 span");
+//      if (span) span.classList.add("finished");
+//    }
+//  }
+//
+//  function StartTextAnimation(i) {
+//    if (i < dataText.length) {
+//      typeWriter(dataText[i], 0, function() {
+//        if (i + 1 < dataText.length) {
+//          StartTextAnimation(i + 1); // Proceed to the next text
+//        } else {
+//          // Stop blinking caret after the last text
+//          const span = document.querySelector("h1 span");
+//          if (span) span.classList.add("finished");
+//        }
+//      });
+//    }
+//  }
+//  setTimeout(function() {
+//    StartTextAnimation(0);
+//  }, 800); //Initial Delay
+//});
 
 window.addEventListener('DOMContentLoaded', event => {
 
