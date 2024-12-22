@@ -24,6 +24,42 @@ const sfFilmsMap = document.getElementById('sfFilmsImage')
 const sfFilmsMapStatic = 'assets/svg/SF Films Map.svg';
 const sfFilmsMapGif = 'assets/gif/sfFilmsMap.gif';
 
+document.addEventListener('DOMContentLoaded', function(event) {
+  var dataText = ["Hello!"];
+
+  function typeWriter(text, i, fnCallback) {
+    if (i < text.length) {
+      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+      setTimeout(function() {
+        typeWriter(text, i + 1, fnCallback);
+      }, 120); // Slower typing speed
+    } else {
+      // Add the "finished" class to stop blinking when done
+      const span = document.querySelector("h1 span");
+      if (span) span.classList.add("finished");
+    }
+  }
+
+  function StartTextAnimation(i) {
+    if (i < dataText.length) {
+      typeWriter(dataText[i], 0, function() {
+        if (i + 1 < dataText.length) {
+          StartTextAnimation(i + 1); // Proceed to the next text
+        } else {
+          // Stop blinking caret after the last text
+          const span = document.querySelector("h1 span");
+          if (span) span.classList.add("finished");
+        }
+      });
+    }
+  }
+
+  // Start the text animation after a 2-second delay
+  setTimeout(function() {
+    StartTextAnimation(0);
+  }, 800);
+});
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -95,40 +131,6 @@ gifOnHover(duluthMap, duluthMapStatic, duluthMapGif);
 gifOnHover(interstateMap, interstateMapStatic, interstateMapGif);
 gifOnHover(sfFilmsMap, sfFilmsMapStatic, sfFilmsMapGif);
 
-document.addEventListener('DOMContentLoaded', function(event) {
-  var dataText = ["Hello!"];
 
-  function typeWriter(text, i, fnCallback) {
-    if (i < text.length) {
-      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback);
-      }, 120); // Slower typing speed
-    } else {
-      // Add the "finished" class to stop blinking when done
-      const span = document.querySelector("h1 span");
-      if (span) span.classList.add("finished");
-    }
-  }
-
-  function StartTextAnimation(i) {
-    if (i < dataText.length) {
-      typeWriter(dataText[i], 0, function() {
-        if (i + 1 < dataText.length) {
-          StartTextAnimation(i + 1); // Proceed to the next text
-        } else {
-          // Stop blinking caret after the last text
-          const span = document.querySelector("h1 span");
-          if (span) span.classList.add("finished");
-        }
-      });
-    }
-  }
-
-  // Start the text animation after a 2-second delay
-  setTimeout(function() {
-    StartTextAnimation(0);
-  }, 500);
-});
 
 

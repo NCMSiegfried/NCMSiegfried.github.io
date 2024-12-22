@@ -11054,8 +11054,11 @@ hr {
     margin: 20px auto;
 }
 #projects {
-    background-color: #D3D3D3;
+    background-color: #fdfdf2;
+    background: url("../assets/svg/Grain_Texture.svg");
+    background-size: auto;
 }
+
 .home-profile-picture{
     width: 15rem;
     height: 15rem;
@@ -11292,7 +11295,7 @@ span.finished {
     transform: translateX(-100%);
     transform: rotateX(90deg);
     animation: flipIn 1s ease-out forwards;
-    animation-delay: 1.8s; 
+    animation-delay: 2.3s;
 }
 
 @keyframes flipIn {
