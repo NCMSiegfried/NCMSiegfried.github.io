@@ -73,8 +73,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: black;
-  --bs-link-hover-color: #2a5a73;
+  --bs-link-color: white;
+  --bs-link-hover-color: gray;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
@@ -2846,10 +2846,10 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #377494;
+  --bs-btn-bg: transparent;
   --bs-btn-border-color: #f4623a;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #2a5a73;
+  --bs-btn-hover-color: gray;
+  --bs-btn-hover-bg: white;
   --bs-btn-hover-border-color: #c34e2e;
   --bs-btn-focus-shadow-rgb: 246, 122, 88;
   --bs-btn-active-color: #fff;
@@ -7304,7 +7304,9 @@ textarea.form-control-lg {
 .h-100 {
   height: 100% !important;
 }
-
+.h-200 {
+  height: 200% !important;
+}
 .h-auto {
   height: auto !important;
 }
@@ -10894,17 +10896,17 @@ hr.divider-light {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: rgba(255, 255, 255, 0.7);
+    color: gray;
   }
   #mainNav .navbar-brand:hover {
-    color: #fff;
+    color: black;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.7);
+    color: gray;
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
+    color: black;
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
@@ -10934,9 +10936,9 @@ header.masthead::before {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: url("../assets/img/Japan.jpeg") center center / cover no-repeat;
-  filter:grayscale(100%) blur(1px);
+  height: 200%;
+  background: url("../assets/svg/background - web size.svg") top center / cover no-repeat;
+  background-color: #fdfdf2;
   z-index: 1;
 }
 
@@ -10946,8 +10948,7 @@ header.masthead::after {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%);
+  height: 200%;
   z-index: 2;
   filter:grayscale(100%);
 }
@@ -10960,7 +10961,7 @@ header.masthead h1, header.masthead .h1 {
 }
 @media (min-width: 992px) {
   header.masthead {
-    height: 100vh;
+    height: 200vh;
     min-height: 40rem;
     padding-top: 4.5rem;
     padding-bottom: 0;
@@ -11064,9 +11065,12 @@ hr {
 .pg1-container{
     display: flex;
     align-items: center;
-    width: 70%;
+    width: 100%;
     gap: 20px;
-
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-right: 2em;
+    padding-left: 2em;
 }
 
 .stacked-div {
@@ -11251,5 +11255,19 @@ hr {
 .project-img{
     background-color:#333;
 }
+.blurred-box{
+    background: inherit;
+    overflow: hidden;
+    backdrop-filter: blur(100px);
+    border-radius: 10px;
 
+}
+.blurred-box:after{
+    content: '';
+    background: inherit;
+    filter: blur(10px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
