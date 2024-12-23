@@ -394,7 +394,7 @@ function sidePanelHome() {
         <div id="svg-container" style="width: 100%; height: auto;">
             <object type="image/svg+xml" data="assets/svg/side_panel_title.svg" style="width: 100%; height: auto;"></object>
         </div>
-        <hr style="border: none; height: 1px; background: black; margin: 20px 0;">
+        <hr style="border: none; height: 1px; background: black;">
         </br>
         <div class="slideShowContainer">
             <div class="slide fade">

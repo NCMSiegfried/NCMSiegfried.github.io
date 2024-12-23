@@ -393,8 +393,8 @@ color = white;
 .slideShowContainer {
     padding: 0.7em;
     background-color: #f9f9f9;
-    box-shadow: rgba(0, 0, 0, 0.9) 0px 5px 15px;
-    radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+    border-radius: 2px;
     position: relative;
 }
 #homeImage {
