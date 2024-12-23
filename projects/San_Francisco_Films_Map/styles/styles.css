@@ -136,7 +136,7 @@ transition-duration: 100ms;
     align-items: center;
 }
 #back-button:hover {
-    background-color: #d3d3d3;
+    background-color: white;
     color: #555555;
     border: 3px solid #555555;
 }

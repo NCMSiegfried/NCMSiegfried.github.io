@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
       if (animatedElement) {
         setTimeout(() => {
           animatedElement.classList.add("slide-in");
-        }, 2000); // Adjust timing as needed
+        }, 1800); // Adjust timing as needed
       }
     }, 800); // Initial Delay
   });
