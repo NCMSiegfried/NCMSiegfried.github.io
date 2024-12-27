@@ -204,6 +204,7 @@ function showSlides(n) {
   popup.setContent(popupContent);
   highlightedLayer.bindPopup(popup).openPopup();
   highlightedLayer.setStyle(highlightMarkerOptions);
+  highlightedLayer.bringToFront();
 }
 
 //POPULATE DROP DOWNS DYNAMICALLY
@@ -511,7 +512,7 @@ function sidePanelHome() {
         </div>
         </br>
         <p style="color: white;">Click on any marker to view film details.</p>
-        <p style="color: white;">Or add a filter</p>
+        <p style="color: white;">Or add a filter:</p>
         <div id="filterContainer">
             <select class= "dropdown hidden" id="directorFilter">
             </select>
@@ -966,6 +967,7 @@ function reloadFilteredLayer(titlePoints) {
                 const properties = marker.feature.properties;
                 updateSidePanel(properties, coords, namesData);
                 circleMarker.setStyle(highlightMarkerOptions);
+                circleMarker.bringToFront();
             });
 
             return circleMarker;
