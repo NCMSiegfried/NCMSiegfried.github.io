@@ -65,6 +65,7 @@ var otherMarkerOptions = {
 };
 //CREATE VARIABLES
 var highlightedLayer = null;
+var highlightedLayer2 = null;
 var popUpLayer = null;
 var popupContent;
 var popup;
@@ -944,10 +945,32 @@ function reloadFilteredLayer(titlePoints) {
 
     // Create a new layer group for the filtered points
     titleLayer = L.layerGroup(
-        titlePoints.map(marker =>
-            L.circleMarker(marker.getLatLng(), otherMarkerOptions, {interactive:false})
-            )
-        );
+        titlePoints.map(marker => {
+            const markerId = marker.feature.properties.unique_id;
+            const isSelected = markerId === highlightedLayer.feature.properties.unique_id;
+            const circleMarker = L.circleMarker(marker.getLatLng(), otherMarkerOptions);
+            // If point is the selected point, automatically have it symbolized with the highlightMarkerOptions
+            if (isSelected) {
+                highlightedLayer2 = circleMarker;
+                highlightedLayer2.setStyle(highlightMarkerOptions);
+                console.log(highlightedLayer2)
+
+            }
+            // Add event listener
+            circleMarker.on('click', () => {
+                console.log(highlightedLayer2)
+                highlightedLayer2.setStyle(otherMarkerOptions);
+                resetHighlight();
+                highlightedLayer2 = circleMarker;
+                const coords = marker.getLatLng();
+                const properties = marker.feature.properties;
+                updateSidePanel(properties, coords, namesData);
+                circleMarker.setStyle(highlightMarkerOptions);
+            });
+
+            return circleMarker;
+        })
+    );
 
     // Add the new layer to the map
     titleLayer.addTo(map);
