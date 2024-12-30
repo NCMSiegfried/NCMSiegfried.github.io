@@ -954,6 +954,7 @@ function reloadFilteredLayer(titlePoints) {
             if (isSelected) {
                 highlightedLayer2 = circleMarker;
                 highlightedLayer2.setStyle(highlightMarkerOptions);
+                highlightedLayer2.bringToFront();
                 console.log(highlightedLayer2)
 
             }

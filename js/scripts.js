@@ -84,40 +84,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
   });
 });
 
-//document.addEventListener('DOMContentLoaded', function(event) {
-//  var dataText = ["Hello!"];
-//
-//  function typeWriter(text, i, fnCallback) {
-//    if (i < text.length) {
-//      document.querySelector("h1").innerHTML = text.substring(0, i + 1) + '<span id="typing-caret" aria-hidden="true"></span>';
-//      setTimeout(function() {
-//        typeWriter(text, i + 1, fnCallback);
-//      }, 150); // typing speed
-//    } else {
-//      //stop blinking when done
-//      const span = document.querySelector("h1 span");
-//      if (span) span.classList.add("finished");
-//    }
-//  }
-//
-//  function StartTextAnimation(i) {
-//    if (i < dataText.length) {
-//      typeWriter(dataText[i], 0, function() {
-//        if (i + 1 < dataText.length) {
-//          StartTextAnimation(i + 1); // Proceed to the next text
-//        } else {
-//          // Stop blinking caret after the last text
-//          const span = document.querySelector("h1 span");
-//          if (span) span.classList.add("finished");
-//        }
-//      });
-//    }
-//  }
-//  setTimeout(function() {
-//    StartTextAnimation(0);
-//  }, 800); //Initial Delay
-//});
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function

@@ -10978,6 +10978,12 @@ header.masthead h1, header.masthead .h1 {
     font-size: 3.5rem;
   }
 }
+.masthead{
+  height: 200vh;
+  min-height: 40rem;
+  padding-top: 4.5rem;
+  padding-bottom: 0;
+}
 
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl, #portfolio .container-xxl {
   max-width: 1920px;
@@ -11066,7 +11072,6 @@ hr {
     border-radius: 2px;
 }
 .pg1-container{
-    display: flex;
     align-items: center;
     width: 100%;
     gap: 20px;
@@ -11306,4 +11311,35 @@ span.finished {
         opacity: 1;
     }
 }
-
+#blurredBoxText {
+    padding: 2em;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+@media (min-width: 767.98px){
+  .pg1-container{
+    display:flex;
+  }
+}
+@media (max-width: 600px){
+  #about{
+    font-size:0.01 em;
+  }
+  .home-profile-picture{
+    width: 10rem;
+    height: 10rem;
+  }
+  #blurredBoxText {
+    padding: 0;
+  }
+  .project-container{
+    display:block;
+    padding:0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .box{
+    width: 100%;
+    margin-bottom:1rem;
+  }
+}
