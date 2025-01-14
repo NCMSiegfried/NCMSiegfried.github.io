@@ -10899,14 +10899,14 @@ hr.divider-light {
     color: gray;
   }
   #mainNav .navbar-brand:hover {
-    color: black;
+    color: white;
   }
   #mainNav .navbar-nav .nav-item .nav-link {
     color: gray;
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: black;
+    color: white;
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
@@ -11341,5 +11341,98 @@ span.finished {
   .box{
     width: 100%;
     margin-bottom:1rem;
+  }
+  .article-other{
+    display:none;
+  }
+  .article-writing{
+    width:100% !important;
+  }
+}
+.article{
+    padding-left:2rem;
+    padding-right:2rem;
+}
+.article-subheading{
+    margin-top: 1.75rem;
+}
+.title-flexbox{
+    display:flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items:center;
+    height: 2.5em;
+}
+.title-icons{
+    list-style:none;
+}
+.title-icons-items{
+    display:inline-block;
+    margin-right: 10px;
+}
+.title-icon-a{
+    color:black;
+}
+.title-icon-a:hover{
+    color:white;
+    transition: all 0.2s ease;
+}
+article img{
+    max-height:30rem;
+    width:60%;
+    object-fit:cover;
+    margin-bottom:3em;
+    margin-top:1em;
+}
+
+.article-body{
+    display: flex;
+    justify-content:center;
+    align-items:flex-start;
+    text-align:justify;
+}
+.article-sections{
+}
+.article-writing{
+    width:60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.article-other{
+}
+.article-sections span:hover{
+    color:white;
+}
+.article-sides{
+    position:sticky;
+    top:120px;
+    width: calc(20% - 50px);
+    padding-bottom:30px;
+}
+.title-header{
+    text-align: justify;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+@media (max-width: 1200px){
+  .title-header{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  .article-sections{
+    display:none;
+  }
+  .article-writing{
+    width:70%;
+    margin-right:30px;
+    float:left;
+  }
+  .article-other{
+    width:calc(30% - 30px);
+  }
+  article img{
+    height:auto;
+    max-height:unset;
+    width:100%;
   }
 }
