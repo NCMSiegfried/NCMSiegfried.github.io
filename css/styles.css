@@ -3774,6 +3774,7 @@ textarea.form-control-lg {
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
+  transition: all 0.2s ease;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
