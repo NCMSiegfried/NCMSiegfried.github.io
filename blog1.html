@@ -32,10 +32,10 @@
             <header class="title-header">
                 <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%;"/>
                 <div class="article-heading">
-                    <h2>MySQL Query Optimization</h2>
+                    <h2>MySQL Performance Tuning</h2>
                 </div>
                 <div class="article-subheading">
-                    <h5 style="margin-bottom:0px;">Strategies to measure and improve queries on a bike shop dataset</h5>
+                    <h5 style="margin-bottom:0px;">Strategies to measure and improve My SQL performance using a bike shop dataset</h5>
                 </div>
                 <div class="title-flexbox">
                     <div class="title-flexbox-left">
@@ -54,41 +54,324 @@
             <img class="" src="assets/img/Japan.jpeg">
             <div class="article-body">
                 <div class="article-sections article-sides">
-                    <h5>Table of Contents</h5>
+                    <h5 style="margin-bottom: 1rem;">Table of Contents</h5>
                     <span class="nav-item">
-                        <a class="nav-link" href="#section1">Section Header</a>
+                        <a class="nav-link" href="#section1">Importance of Performance Tuning</a>
                     </span>
+                    <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
                     <span class="nav-item">
-                        <a class="nav-link" href="#section1">Section Header</a>
+                        <a class="nav-link" href="#section2">System-Level Tuning</a>
+                    </span>
+                    <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
+                    <span class="nav-item">
+                        <a class="nav-link" href="#section3">Software-Based Tuning</a>
+                    </span>
+                    <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
+                    <span class="nav-item">
+                        <a class="nav-link" href="#section4">Measuring Performance</a>
+                    </span>
+                    <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
+                    <span class="nav-item">
+                        <a class="nav-link" href="#section5">Summary</a>
                     </span>
                 </div>
                 <div class="article-writing">
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            MySQL is one of the most popular database management systems used today.
+                            Its scalability, high performance, security, cross-platform support, and compatibility with a range of other programming languages make it a top choice across a range of database applications including content management systems, cloud integration, and e-commerce sites.
+                            Knowing how to work with MySQL at a deeper level is essentail to taking advantage of its full capabilities.
+                            This exercise will go over MySQL optimization best practices and will use a <a style="color: -webkit-link;" target="_blank" href="https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database/data">bike shop</a> dataset to show the impact proper performance tuning can have.
                         </span>
                     </p>
-                    <h3 id="section1">Section Header</h3>
+                    <h3 id="section1">Importance of Performance Tuning</h3>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            Performance tuning plays a crucial role in efficient and effective database utilization.
+                            Execution times, resource consumption, and overall user experience can be greatly enhanced through proper use:
                         </span>
                     </p>
+                    <ul>
+                        <li><h5>Faster Query Execution</h5></li>
+                            <ul>
+                                <li>
+                                    Efficient query execution can be the difference between waiting 20 seconds and 20 minutes. As the database grows, these inefficiencies will further bog down the execution times.
+                                </li>
+                            </ul>
+                        <li><h5>Resource Efficiency</h5></li>
+                            <ul>
+                                <li>
+                                    Minimizing resources like CPU and Memory can reduce server strain and in some cases save money with lower infrastructure costs.
+                                </li>
+                            </ul>
+                        <li><h5>Better User Experience</h5></li>
+                            <ul>
+                                <li>
+                                    Application reliability, latency, and load times can be greatly reduced - creating a much smoother user experience.
+                                </li>
+                            </ul>
+                    </ul>
+                    <h3 id="section2">System-Level Tuning</h3>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            System-level tuning focuses on the hardware and operating system to enhance elements such as
+                            processing power, memory, and network configurations. The exact configurations depends heavily on the type of SQL processing being used
+                            (eg. whether or not the process is read-heavy or writing-heavy). The following should be considered for system-level tuning:
                         </span>
                     </p>
+                    <ul>
+                        <li><h5>Hardware</h5></li>
+                            <ul>
+                                <li>
+                                    <b>CPU</b> - Higher processing speed and greater caching capabilities can lead to faster queries and performance.
+                                </li>
+                                <li>
+                                    <b>InnoDB</b> - A storage engine used to cache data and indexes. Allocating more of the server's memory to the InnoDB buffer pool can greatly increase performance.
+                                </li>
+                                <li>
+                                    <b>SSDs and HDDs</b> - Use SSDs for greater data access speeds.
+                                </li>
+                            </ul>
+                        <li><h5>Operating System</h5></li>
+                            <ul>
+                                <li>
+                                    <b>Input/Output (I/O) Scheduling</b> - Used to configure the order and priority of disk read and write operations.
+                                </li>
+                            </ul>
+                        <li><h5>Network Configuration</h5></li>
+                            <ul>
+                                <li>
+                                    <b>TCP Settings</b> - Adjusting TCP buffer sizes can impact network-intensive MySQL environments with larger buffer sizes benefiting long-distance and high-latency networks. Adjusting TCP backlog settings can help with burst requests in MySQL by preventing connection drops and timeouts.
+                                </li>
+                            </ul>
+                    </ul>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            As the data and requirements grow, the hardware must be increased to keep up with the greater demand. Both vertical scaling (eg. higher CPU, more RAM, and faster or larger storage) and horizontal
+                            scaling (eg. server clustering and more distributed architecture) can be considered.
                         </span>
                     </p>
+                    <h3 id="section3">Software-Based Tuning</h3>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            Increasing MySQL performance through software is done through configuring many of the MySQL settings
+                            which can greatly improve performance through efficiency and data processing speeds.
                         </span>
                     </p>
+                    <ul>
+                        <li><h5>Query Optimization</h5></li>
+                            <ul>
+                                <li>
+                                    Writing precise and efficient SQL will lead to faster query times and minimized resource usage
+                                </li>
+                                <ul>
+                                    <li>
+                                        Joins are generally faster than subqueries
+                                    </li>
+                                    <li>
+                                        Use specific column names instead of <code>SELECT *</code>
+                                    </li>
+                                    <li>
+                                        Use <code>WHERE</code> clause to reduce the number of rows being processed
+                                    </li>
+                                </ul>
+                            </ul>
+                        <li><h5>Indexing</h5></li>
+                            <ul>
+                                <li>
+                                    Proper indexing calls for faster querying by creating pointers to where data is stored
+                                </li>
+                                <ul>
+                                    <li>
+                                        Do not over index
+                                    </li>
+                                    <li>
+                                        Create indexes where the <code>WHERE</code> clause and <code>JOIN</code> conditions are most frequently used
+                                    </li>
+                                    <li>
+                                        Use composite indexes where queries involve multiple indexes
+                                    </li>
+                                </ul>
+                            </ul>
+                        <li><h5>Cache Configurations</h5></li>
+                            <ul>
+                                <li>
+                                    query caching often boosts performance in repetitive queries
+                                </li>
+                                <ul>
+                                    <li>
+                                        <code>query_cache_size</code> determines the amount of memory allocated to the query cache - 10% to 20% of total memory is recommended to start
+                                    </li>
+                                    <li>
+                                        <code>query_cache_type</code> determines the amount of memory allocated to the query cache. 0 deisables the query cache (default), 1 allows caching all series, 2 enables caching only with the <code>SQL_CACHE</code> hint
+                                    </li>
+                                </ul>
+                            </ul>
+                        <li><h5>Storage Engine Selection</h5></li>
+                            <ul>
+                                <li>
+                                    MyISAM vs. InnoDB
+                                </li>
+                                <ul><li style="list-style-type: none;">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>MyISAM</th>
+                                                    <th>InnoDB</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Pros</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>
+                                                                Speedy read operations
+                                                            </li>
+                                                            <li>
+                                                                Less disk space
+                                                            </li>
+                                                            <li>
+                                                                Lower memory usage
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>
+                                                                ACID (atomic, consistent, isolated, and durable) compliant
+                                                            </li>
+                                                            <li>
+                                                                Supports foreign keys
+                                                            </li>
+                                                            <li>
+                                                                Faster in write-heavy applications
+                                                            </li>
+                                                            <li>
+                                                                Better crash recovery mechanisms
+                                                            </li>
+                                                            <li>
+                                                                Supports transactions
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Cons</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>
+                                                                Less reliable
+                                                            </li>
+                                                            <li>
+                                                                Prone to corruption
+                                                            </li>
+                                                            <li>
+                                                                Not ACID compliant
+                                                            </li>
+                                                            <li>
+                                                                Does not support foreign keys
+                                                            </li>
+                                                            <li>
+                                                                Does not support transactions
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>
+                                                                Requires more memory
+                                                            </li>
+                                                            <li>
+                                                                Requires more storage
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best For</td>
+                                                    <td>Simple read-heavy applications where data integrity is not important</td>
+                                                    <td>All other applications</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </ul>
+                        <li><h5>InnoDB Storage Engine Configuration</h5></li>
+                            <ul>
+                                <li>
+                                    TCP Buffer Size
+                                </li>
+                            </ul>
+                        <li><h5>Database Configuration</h5></li>
+                            <ul>
+                                <li>
+                                    <b>Defragmenting Tables: </b>Use the <code>OPTIMIZE TABLE</code> command to reduce storage space and improve I/O efficiency.
+                                </li>
+                                <li>
+                                    <b>Archiving Data: </b> Archiving old data that is no longer being used can
+                                </li>
+                                <li>
+                                   <b>Repairing Corrupted Tables: </b>Use <code>CHECK TABLE</code> to see if the table is corrupted and <code>REPAIR TABLE</code> to repair the corrupted table.
+                                </li>
+                            </ul>
+                    </ul>
+                    <h3 id="section4">Measuring Performance</h3>
+                    <p>
+                        <span>
+                            Measuring performance is essential for knowing what steps to take in optimizing MySQL servers. Performance monitoring can be categorized into two main types - resource metrics (software, hardware, network resources consumed) and workload metrics (output a database can produce). Within these broader categories, there are a number of different ways to measure performance:
+                        </span>
+                    </p>
+                    <ul>
+                        <li><h5>Monitoring Query Performance</h5></li>
+                            <ul>
+                                <li>
+                                    <code>EXPLAIN</code>
+                                </li>
+                                <li>
+                                    Buffer -
+                                </li>
+                            </ul>
+                        <li><h5>Monitoring Index Performance</h5></li>
+                            <ul>
+                                <li>
+                                    Connections -
+                                </li>
+                                <li>
+                                    Buffer -
+                                </li>
+                            </ul>
+                        <li><h5>Tracking Server Metrics</h5></li>
+                            <ul>
+                                <li>
+                                    Throughput: How much a database can
+                                </li>
+                                <li>
+                                    Latency: The execution time
+                                </li>
+                            </ul>
+                        <li><h5>Storage Engine Metrics</h5></li>
+                            <ul>
+                                <li>
+                                    Connections -
+                                </li>
+                                <li>
+                                    Buffer -
+                                </li>
+                            </ul>
+                        <li><h5>Monitoring Thread Behavior</h5></li>
+                            <ul>
+                                <li>
+                                    <code>EXPLAIN</code>
+                                </li>
+                                <li>
+                                    Buffer -
+                                </li>
+                            </ul>
+                    </ul>
+                    <h3 id="section5">Summary</h3>
                     <p>
                         <span>
                             Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
