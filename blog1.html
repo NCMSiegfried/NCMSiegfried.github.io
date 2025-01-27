@@ -72,7 +72,11 @@
                     </span>
                     <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
                     <span class="nav-item">
-                        <a class="nav-link" href="#section5">Summary</a>
+                        <a class="nav-link" href="#section5">Applying Performance Tuning Practices to Bike Shop Dataset</a>
+                    </span>
+                    <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
+                    <span class="nav-item">
+                        <a class="nav-link" href="#section6">Summary</a>
                     </span>
                 </div>
                 <div class="article-writing">
@@ -126,93 +130,9 @@
                                     <b>CPU</b> - Higher processing speed and greater caching capabilities can lead to faster queries and performance.
                                 </li>
                                 <li>
-                                    <b>InnoDB</b> - A storage engine used to cache data and indexes. Allocating more of the server's memory to the InnoDB buffer pool can greatly increase performance.
+                                    <b>MyISAM vs. InnoDB</b>
                                 </li>
-                                <li>
-                                    <b>SSDs and HDDs</b> - Use SSDs for greater data access speeds.
-                                </li>
-                            </ul>
-                        <li><h5>Operating System</h5></li>
-                            <ul>
-                                <li>
-                                    <b>Input/Output (I/O) Scheduling</b> - Used to configure the order and priority of disk read and write operations.
-                                </li>
-                            </ul>
-                        <li><h5>Network Configuration</h5></li>
-                            <ul>
-                                <li>
-                                    <b>TCP Settings</b> - Adjusting TCP buffer sizes can impact network-intensive MySQL environments with larger buffer sizes benefiting long-distance and high-latency networks. Adjusting TCP backlog settings can help with burst requests in MySQL by preventing connection drops and timeouts.
-                                </li>
-                            </ul>
-                    </ul>
-                    <p>
-                        <span>
-                            As the data and requirements grow, the hardware must be increased to keep up with the greater demand. Both vertical scaling (eg. higher CPU, more RAM, and faster or larger storage) and horizontal
-                            scaling (eg. server clustering and more distributed architecture) can be considered.
-                        </span>
-                    </p>
-                    <h3 id="section3">Software-Based Tuning</h3>
-                    <p>
-                        <span>
-                            Increasing MySQL performance through software is done through configuring many of the MySQL settings
-                            which can greatly improve performance through efficiency and data processing speeds.
-                        </span>
-                    </p>
-                    <ul>
-                        <li><h5>Query Optimization</h5></li>
-                            <ul>
-                                <li>
-                                    Writing precise and efficient SQL will lead to faster query times and minimized resource usage
-                                </li>
-                                <ul>
-                                    <li>
-                                        Joins are generally faster than subqueries
-                                    </li>
-                                    <li>
-                                        Use specific column names instead of <code>SELECT *</code>
-                                    </li>
-                                    <li>
-                                        Use <code>WHERE</code> clause to reduce the number of rows being processed
-                                    </li>
-                                </ul>
-                            </ul>
-                        <li><h5>Indexing</h5></li>
-                            <ul>
-                                <li>
-                                    Proper indexing calls for faster querying by creating pointers to where data is stored
-                                </li>
-                                <ul>
-                                    <li>
-                                        Do not over index
-                                    </li>
-                                    <li>
-                                        Create indexes where the <code>WHERE</code> clause and <code>JOIN</code> conditions are most frequently used
-                                    </li>
-                                    <li>
-                                        Use composite indexes where queries involve multiple indexes
-                                    </li>
-                                </ul>
-                            </ul>
-                        <li><h5>Cache Configurations</h5></li>
-                            <ul>
-                                <li>
-                                    query caching often boosts performance in repetitive queries
-                                </li>
-                                <ul>
-                                    <li>
-                                        <code>query_cache_size</code> determines the amount of memory allocated to the query cache - 10% to 20% of total memory is recommended to start
-                                    </li>
-                                    <li>
-                                        <code>query_cache_type</code> determines the amount of memory allocated to the query cache. 0 deisables the query cache (default), 1 allows caching all series, 2 enables caching only with the <code>SQL_CACHE</code> hint
-                                    </li>
-                                </ul>
-                            </ul>
-                        <li><h5>Storage Engine Selection</h5></li>
-                            <ul>
-                                <li>
-                                    MyISAM vs. InnoDB
-                                </li>
-                                <ul><li style="list-style-type: none;">
+                                <li style="list-style-type: none;">
                                         <table>
                                             <thead>
                                                 <tr>
@@ -227,10 +147,10 @@
                                                     <td>
                                                         <ul>
                                                             <li>
-                                                                Speedy read operations
+                                                                fast read operations
                                                             </li>
                                                             <li>
-                                                                Less disk space
+                                                                Less disk space consuption
                                                             </li>
                                                             <li>
                                                                 Lower memory usage
@@ -246,7 +166,7 @@
                                                                 Supports foreign keys
                                                             </li>
                                                             <li>
-                                                                Faster in write-heavy applications
+                                                                Faster write-heavy applications
                                                             </li>
                                                             <li>
                                                                 Better crash recovery mechanisms
@@ -297,12 +217,149 @@
                                             </tbody>
                                         </table>
                                     </li>
+                                <li>
+                                    <b>SSDs and HDDs</b> - SSDs are generally preferred due to greater data access speeds.
+                                </li>
+                            </ul>
+                        <li><h5>Operating System</h5></li>
+                            <ul>
+                                <li>
+                                    <b>Input/Output (I/O) Scheduling</b> - Used to configure the order and priority of disk read and write operations.
+                                </li>
+                            </ul>
+                        <li><h5>Network Configuration</h5></li>
+                            <ul>
+                                <li>
+                                    <b>TCP Settings</b> - Adjusting TCP buffer sizes can impact network-intensive MySQL environments with larger buffer sizes benefiting long-distance and high-latency networks. Adjusting TCP backlog settings can help with burst requests in MySQL by preventing connection drops and timeouts.
+                                </li>
+                            </ul>
+                    </ul>
+                    <p>
+                        <span>
+                            As the data and requirements grow, the hardware must be increased to keep up with the greater demand. Both vertical scaling (eg. higher CPU, more RAM, and faster or larger storage) and horizontal
+                            scaling (eg. server clustering and more distributed architecture) should be considered.
+                        </span>
+                    </p>
+                    <h3 id="section3">Software-Based Tuning</h3>
+                    <p>
+                        <span>
+                            Increasing MySQL performance through software is done through configuring many of the MySQL settings
+                            which can greatly improve performance through efficiency and data processing speeds.
+                        </span>
+                    </p>
+                    <ul>
+                        <li><h5>Query Optimization</h5></li>
+                            <ul>
+                                <li>
+                                    Writing precise and efficient SQL will lead to faster query times and minimized resource usage
+                                </li>
+                                <ul>
+                                    <li>
+                                        Joins are generally faster than subqueries
+                                    </li>
+                                    <li>
+                                        Use specific column names instead of <code>SELECT *</code>
+                                    </li>
+                                    <li>
+                                        Use <code>WHERE</code> clause to reduce the number of rows being processed
+                                    </li>
                                 </ul>
+                            </ul>
+                        <li><h5>Indexing</h5></li>
+                            <ul>
+                                <li>
+                                    Proper indexing calls for faster querying by creating pointers to where data is stored
+                                </li>
+                                <ul>
+                                    <li>
+                                        Do not over index
+                                    </li>
+                                    <li>
+                                        Create indexes where the <code>WHERE</code> clause and <code>JOIN</code> conditions are most frequently used
+                                    </li>
+                                    <li>
+                                        Use composite indexes where queries involve multiple indexes
+                                    </li>
+                                </ul>
+                            </ul>
+                        <li><h5>Cache Configurations</h5></li>
+                            <ul>
+                                <li>
+                                    query caching often boosts performance in repetitive queries
+                                </li>
+                                <li style="list-style-type: none;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Adjustment Variable</th>
+                                                <th>Use</th>
+                                                <th>Recommended Configuration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>query_cache_size</td>
+                                                <td>Determines the amount of memory allocated to the query cache</td>
+                                                <td>0 disables the query cache (default), 1 allows caching all series, 2 enables caching only with the <code>SQL_CACHE</code> hint</td>
+                                            </tr>
+                                            <tr>
+                                                <td>query_cache_type</td>
+                                                <td>Determines how query cache operates</td>
+                                                <td>10% to 20% of total memory is recommended to start</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
                             </ul>
                         <li><h5>InnoDB Storage Engine Configuration</h5></li>
                             <ul>
-                                <li>
-                                    TCP Buffer Size
+                                <li style="list-style-type: none;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Adjustment Variable</th>
+                                                <th>Use</th>
+                                                <th>Recommended Configuration</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Innodb_buffer_pool_size</td>
+                                                <td>Adjusts server RAM for caching</td>
+                                                <td>50-70% of RAM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Innodb_log_file_size</td>
+                                                <td>Adjust size of redo log files</td>
+                                                <td>Increase if more than 50% being utilized</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Innodb_flush_log_at_trx_commit</td>
+                                                <td>Adjust how transaction logs are written and flushed to the disk</td>
+                                                <td>Set to 1 for ACID compliance and durability; 0 or 2 for better performance at the cost of durability</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Innodb_flush_method</td>
+                                                <td>Determines how data and logs are flushed to disk</td>
+                                                <td><code>O_DIRECT</code> for SSDs and <code>fsync</code> for HDD</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Innodb_file_per_table</td>
+                                                <td>Store each InnoDB table as its own file making scaling easier</td>
+                                                <td>Enable with <code>ON</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Innodb_stats_on_metadata</td>
+                                                <td>Controls whether storage engine recalculates table statistics</td>
+                                                <td>Disable with <code>OFF</code></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Innodb_buffer_pool_instances</td>
+                                                <td>Splits the buffer pool into multiple instances</td>
+                                                <td>1 instance per 1GB of buffer pool size with a limit of 8</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </li>
                             </ul>
                         <li><h5>Database Configuration</h5></li>
@@ -328,10 +385,112 @@
                         <li><h5>Monitoring Query Performance</h5></li>
                             <ul>
                                 <li>
-                                    <code>EXPLAIN</code>
+                                    <code>EXPLAIN</code> is used to get information about a query execution and returns the following column items:
                                 </li>
-                                <li>
-                                    Buffer -
+                                <li style="list-style-type: none;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Column</th>
+                                                <th>Description</th>
+                                                <th>Output values</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>id</td>
+                                                <td>Identifies the query step</td>
+                                                <td>integer (eg. 1)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>select_type</td>
+                                                <td>Identifies the type of query</td>
+                                                <td>
+                                                    <ul>
+                                                        <li><code>SIMPLE</code> - a select without using unions or subqueries</li>
+                                                        <li><code>PRIMARY</code> - an outermost select</li>
+                                                        <li><code>UNION</code> - second <code>SELECT</code> query type in a <code>UNION</code></li>
+                                                        <li><code>DEPENDENT UNION</code> - union dependent on outer query</li>
+                                                        <li><code>UNION RESULT</code> - the result of a union</li>
+                                                        <li><code>SUBQUERY</code> - a select query used in another select query (not using <code>FROM</code> clause)</li>
+                                                        <li><code>DEPENDENT SUBQUERY</code> - subquery dependent on outer query</li>
+                                                        <li><code>DERIVED</code> - a select query using <code>FROM</code> clause</li>
+                                                        <li><code>DEPENDENT DERIVED</code> - derived table dependent on another table</li>
+                                                        <li><code>MATERIALIZED</code> - temporary subquery table generated in memory</li>
+                                                        <li><code>UNCACHEABLE SUBQUERY</code> - a subquery where the result cannot be cached and must be re-evaluated for each outer query row</li>
+                                                        <li><code>UNCACHEABLE UNION</code> - a union in an <code>UNCACHEABLE SUBQUERY</code></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>table</td>
+                                                <td>Table name being accessed</td>
+                                                <td>string (eg. store_sales.orders)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>partitions</td>
+                                                <td>Lists partitions being used (how the query is being split)</td>
+                                                <td>partition identifier (eg. p1)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>type</td>
+                                                <td>Identifies the join type</td>
+                                                <td>
+                                                    <ul>
+                                                        <li><code>ALL</code> - fully scans table</li>
+                                                        <li><code>index</code> - full index scan</li>
+                                                        <li><code>range</code> - scans a range of rows using indexse</li>
+                                                        <li><code>ref</code> - search rows with matching indexed values</li>
+                                                        <li><code>eq_ref</code> - joins using a unique key</li>
+                                                        <li><code>const</code> - uses a constant row or system table</li>
+                                                    </ul>
+                                                    <a style="font-size: smaller;">* join type listed from least to most efficient</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>possible_keys</td>
+                                                <td>Identifies indexes being considered for query</td>
+                                                <td>Key type (eg. PRIMARY)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>key</td>
+                                                <td>Returns the index being used in the listed step</td>
+                                                <td>Key type (eg. PRIMARY)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>key_len</td>
+                                                <td>Returns the length of the key being used</td>
+                                                <td>integer (eg. 10)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ref</td>
+                                                <td>Returns the column constant used with the index</td>
+                                                <td>Column name (eg. store_sales.order.order_id)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>rows</td>
+                                                <td>Returns the number of rows being queried</td>
+                                                <td>integer (eg. 2000)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>filtered</td>
+                                                <td>Returns a percentage of rows being filtered</td>
+                                                <td>integer (eg. 100)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>extra</td>
+                                                <td>Returns additional information (<code>Using index</code>, <code>Using temporary</code>, <code>Using filesort</code>)</td>
+                                                <td>
+                                                    <ul>
+                                                        <li><code>Using index</code> - the query only uses indexes to get data</li>
+                                                        <li><code>Using where</code> - retrieves all rows and then applies filter</li>
+                                                        <li><code>Using temporary</code> - creates a temporary table</li>
+                                                        <li><code>Using filesort</code> - an external sort is made</li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </li>
                             </ul>
                         <li><h5>Monitoring Index Performance</h5></li>
@@ -371,7 +530,18 @@
                                 </li>
                             </ul>
                     </ul>
-                    <h3 id="section5">Summary</h3>
+                    <h3 id="section5">Applying Performance Tuning Practices to Bike Shop Dataset</h3>
+                    <p>
+                        <span>
+                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                        </span>
+                    </p>
+                    <p>
+                        <span>
+                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                        </span>
+                    </p>
+                    <h3 id="section6">Summary</h3>
                     <p>
                         <span>
                             Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.

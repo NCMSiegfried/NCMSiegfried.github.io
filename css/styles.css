@@ -340,6 +340,10 @@ td {
   font-size: small;
 }
 
+tr {
+  font-size: smaller;
+}
+
 thead,
 tbody,
 tfoot,
