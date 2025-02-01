@@ -272,7 +272,7 @@
                                 </li>
                                 <ul>
                                     <li>
-                                        Do not over index
+                                        Do <b>not</b> over index
                                     </li>
                                     <li>
                                         Create indexes where the <code>WHERE</code> clause and <code>JOIN</code> conditions are most frequently used
@@ -505,10 +505,93 @@
                         <li><h5>Tracking Server Metrics</h5></li>
                             <ul>
                                 <li>
-                                    Throughput: How much a database can
+                                    Return server metrics using <code>SHOW [GLOBAL|SESSION] STATUS;</code>
                                 </li>
+                                <ul>
+                                    <li>Using <code>GLOBAL</code> returns aggregated values across all connection</li>
+                                    <li>Using <code>SESSION</code> returns current connection values</li>
+                                </ul>
                                 <li>
-                                    Latency: The execution time
+                                    <code>SHOW [GLOBAL|SESSION] STATUS;</code> returns a number of metrics including:
+                                </li>
+                                <li style="list-style-type: none;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Status Variable Category</th>
+                                                <th>Status Variable</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="4">Connections</td>
+                                                <td><code>Connections</code></td>
+                                                <td>Total number of connections</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Threads_connected</code></td>
+                                                <td>Number of active connections</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Threads_running</code></td>
+                                                <td>Number of threads actively running queries</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Aborted_connects</code></td>
+                                                <td>Failed connection attempts</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4">Queries</td>
+                                                <td>Queries</td>
+                                                <td>Total number of queries</td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>Slow_queries</td>
+                                                <td>Number of queries exceeding configured query speed threshold</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Com_select</td>
+                                                <td>Number of <code>SELECT</code> operations</td>
+                                            </tr>
+                                            <tr>
+                                                <td>com_insert</td>
+                                                <td>Returns the length of the key being used</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4">Table and Row Operations</td>
+                                                <td><code>Handler_read_rnd</code></td>
+                                                <td>Number of random reads performed</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Handler_read_key</code></td>
+                                                <td>Number of reads using indexes</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Handler_write</code></td>
+                                                <td>Number of rows written</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Handler_delete</code></td>
+                                                <td>Number of deleted rows</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4">Cache and Buffer Utilization</td>
+                                                <td><code>Qcache_hits</code></td>
+                                                <td>Number of query cache hits</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Qcache_inserts</code></td>
+                                                <td>Number of queries added to query cache</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>Innodb_buffer_pool_read_requests</code></td>
+                                                <td>Number of read requests to the InnoDB buffer pool</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p style="font-size: smaller;">* Note: not all variables are covered in this table. CLick <a style="color: -webkit-link;" target="_blank" href="https://dev.mysql.com/doc/refman/5.7/en/server-status-variables.html">HERE</a> for a full list of server status variable explanations.</p>
                                 </li>
                             </ul>
                         <li><h5>Storage Engine Metrics</h5></li>
