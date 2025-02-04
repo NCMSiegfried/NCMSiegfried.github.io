@@ -479,7 +479,7 @@
                                             </tr>
                                             <tr>
                                                 <td>extra</td>
-                                                <td>Returns additional information (<code>Using index</code>, <code>Using temporary</code>, <code>Using filesort</code>)</td>
+                                                <td>Returns additional information</td>
                                                 <td>
                                                     <ul>
                                                         <li><code>Using index</code> - the query only uses indexes to get data</li>
@@ -491,15 +491,6 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </li>
-                            </ul>
-                        <li><h5>Monitoring Index Performance</h5></li>
-                            <ul>
-                                <li>
-                                    Connections -
-                                </li>
-                                <li>
-                                    Buffer -
                                 </li>
                             </ul>
                         <li><h5>Tracking Server Metrics</h5></li>
@@ -543,20 +534,20 @@
                                             </tr>
                                             <tr>
                                                 <td rowspan="4">Queries</td>
-                                                <td>Queries</td>
+                                                <td><code>Queries</code></td>
                                                 <td>Total number of queries</td>
                                             </tr>
                                             <tr>
 
-                                                <td>Slow_queries</td>
+                                                <td><code>Slow_queries</code></td>
                                                 <td>Number of queries exceeding configured query speed threshold</td>
                                             </tr>
                                             <tr>
-                                                <td>Com_select</td>
+                                                <td><code>Com_select</code></td>
                                                 <td>Number of <code>SELECT</code> operations</td>
                                             </tr>
                                             <tr>
-                                                <td>com_insert</td>
+                                                <td><code>com_insert</code></td>
                                                 <td>Returns the length of the key being used</td>
                                             </tr>
                                             <tr>
@@ -592,24 +583,6 @@
                                         </tbody>
                                     </table>
                                     <p style="font-size: smaller;">* Note: not all variables are covered in this table. CLick <a style="color: -webkit-link;" target="_blank" href="https://dev.mysql.com/doc/refman/5.7/en/server-status-variables.html">HERE</a> for a full list of server status variable explanations.</p>
-                                </li>
-                            </ul>
-                        <li><h5>Storage Engine Metrics</h5></li>
-                            <ul>
-                                <li>
-                                    Connections -
-                                </li>
-                                <li>
-                                    Buffer -
-                                </li>
-                            </ul>
-                        <li><h5>Monitoring Thread Behavior</h5></li>
-                            <ul>
-                                <li>
-                                    <code>EXPLAIN</code>
-                                </li>
-                                <li>
-                                    Buffer -
                                 </li>
                             </ul>
                     </ul>
