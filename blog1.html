@@ -99,7 +99,7 @@
                         <li><h5>Faster Query Execution</h5></li>
                             <ul>
                                 <li>
-                                    Efficient query execution can be the difference between waiting 20 seconds and 20 minutes. As the database grows, these inefficiencies will further bog down the execution times.
+                                    Efficient query execution can be the difference between waiting 0.0002 seconds and 20 minutes. As the database grows, these inefficiencies will further bog down the execution times.
                                 </li>
                             </ul>
                         <li><h5>Resource Efficiency</h5></li>
@@ -251,24 +251,7 @@
                         <li><h5>Query Optimization</h5></li>
                             <ul>
                                 <li>
-                                    Writing precise and efficient SQL will lead to faster query times and minimized resource usage
-                                </li>
-                                <ul>
-                                    <li>
-                                        Joins are generally faster than subqueries
-                                    </li>
-                                    <li>
-                                        Use specific column names instead of <code>SELECT *</code>
-                                    </li>
-                                    <li>
-                                        Use <code>WHERE</code> clause to reduce the number of rows being processed
-                                    </li>
-                                </ul>
-                            </ul>
-                        <li><h5>Indexing</h5></li>
-                            <ul>
-                                <li>
-                                    Proper indexing calls for faster querying by creating pointers to where data is stored
+                                    <b>Indexing</b> - Proper indexing calls for faster querying by creating pointers to where data is stored
                                 </li>
                                 <ul>
                                     <li>
@@ -279,6 +262,22 @@
                                     </li>
                                     <li>
                                         Use composite indexes where queries involve multiple indexes
+                                    </li>
+                                    <li>
+                                        Avoid using functions in <code>WHERE</code> clause as it can prevent use of indexes
+                                    </li>
+                                </ul>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <b>Joins</b> - Efficiently join tables on primary and foreign keys
+                                </li>
+                                <ul>
+                                    <li>
+                                        Use the appropriate join type depending on your data relationships (<code>INNER</code>, <code>LEFT</code>, <code>RIGHT</code>, <code>OUTER</code>)
+                                    </li>
+                                    <li>
+                                        Cross joins can lead to a large number of rows being processed
                                     </li>
                                 </ul>
                             </ul>
@@ -586,12 +585,32 @@
                                 </li>
                             </ul>
                     </ul>
+                    <p>
+                        <span>
+                            There are a multitude of ways to measure performance. <code>SHOW [GLOBAL|SESSION] STATUS;</code> alone will return over a hundred status variables. They key is to know which status variables are important for which metric you want to focus on and how to read its output. It's important to also note that there are several third party applications such as
+                            <a style="color: -webkit-link;" target="_blank" href="https://www.manageengine.com/products/applications_manager/">ManageEngine</a>,
+                            <a style="color: -webkit-link;" target="_blank" href="https://docs.digitalocean.com/products/databases/mysql/how-to/monitor-databases/">DigitalOcean</a>, and
+                            <a style="color: -webkit-link;" target="_blank" href="https://www.percona.com/">Percona</a>
+                            which can help monitor your MYSQL performance - each with their own strengths and weaknesses depending on your use case.
+                        </span>
+                    </p>
                     <h3 id="section5">Applying Performance Tuning Practices to Bike Shop Dataset</h3>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            This section will apply some of the MySQL performance strategies using a <a style="color: -webkit-link;" target="_blank" href="https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database/data">bike shop</a>
+                            dataset.
                         </span>
                     </p>
+                    <p style="text-align:center;"><img id="inline_image" src="assets/img/Bike_Shop_Database_Schema.jpg"></p>
+                    <h5>Query Optimization</h5>
+                    <p>Let's start with trying to query metrics for the different bike shops in the dataset.</p>
+                    <div class="coded">
+                    <p id="coded"><span id="coded-colored">SELECT</span> *</p>
+                    <p id="coded"><span id="coded-colored">FROM</span> bike_store_sales.stores s</p>
+                    <p id="coded"><span id="coded-colored">JOIN</span> bike_store_sales.orders o</p>
+                    <p id="coded"><span id="coded-colored">ON</span> o.store_id = s.store_id;</p>
+                    </div>
+
                     <p>
                         <span>
                             Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
