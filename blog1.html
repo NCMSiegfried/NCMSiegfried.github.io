@@ -597,25 +597,43 @@
                     <h3 id="section5">Applying Performance Tuning Practices to Bike Shop Dataset</h3>
                     <p>
                         <span>
-                            This section will apply some of the MySQL performance strategies using a <a style="color: -webkit-link;" target="_blank" href="https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database/data">bike shop</a>
+                            This section will apply some of the mentioned MySQL performance strategies using a <a style="color: -webkit-link;" target="_blank" href="https://www.kaggle.com/datasets/dillonmyrick/bike-store-sample-database/data">bike shop</a>
                             dataset.
                         </span>
                     </p>
-                    <p style="text-align:center;"><img id="inline_image" src="assets/img/Bike_Shop_Database_Schema.jpg"></p>
+                    <p style="text-align:center;"><img style="width:75% !important;" id="inline_image" src="assets/img/Bike_Shop_Database_Schema.jpg"></p>
                     <h5>Query Optimization</h5>
-                    <p>Let's start with trying to query metrics for the different bike shops in the dataset.</p>
+                    <p>Let's start trying to query order data from a specific store:</p>
                     <div class="coded">
-                    <p id="coded"><span id="coded-colored">SELECT</span> *</p>
-                    <p id="coded"><span id="coded-colored">FROM</span> bike_store_sales.stores s</p>
-                    <p id="coded"><span id="coded-colored">JOIN</span> bike_store_sales.orders o</p>
-                    <p id="coded"><span id="coded-colored">ON</span> o.store_id = s.store_id;</p>
+                        <p id="coded"><span id="coded-colored">SELECT</span> *</p>
+                        <p id="coded"><span id="coded-colored">FROM</span> bike_store_sales.stores s</p>
+                        <p id="coded"><span id="coded-colored">JOIN</span> bike_store_sales.orders o</p>
+                        <p id="coded"><span id="coded-colored">ON</span> o.store_id = s.store_id</p>
+                        <p id="coded"><span id="coded-colored">WHERE</span> store_name = 'Santa Cruz Bikes';</p>
                     </div>
-
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            Using <code>EXPLAIN</code> we can get information of the query execution:
                         </span>
                     </p>
+                    <p style="text-align:center;"><img id="inline_image" src="assets/img/blog1image1.png"></p>
+                    <p>
+                        <span>
+                            Whenever calling <code>WHERE</code> in a query, it is important to check where indexes can be useful. This query is looking for <code>store_name = 'Santa Cruz Bikes'</code> and joins the two tables on the <code>store_id</code> column.
+                            Knowing this, it would be useful to have indexes for <code>store_name</code> and <code>store_id</code>:
+                        </span>
+                    </p>
+                    <div class="coded">
+                        <p id="coded"><span id="coded-colored">CREATE INDEX</span> store_name <span id="coded-colored">ON</span> bike_store_sales.stores (store_name);</p>
+                        <p id="coded"><span id="coded-colored">CREATE INDEX</span> store_id <span id="coded-colored">ON</span> bike_store_sales.orders (store_id);</p>
+                    </div>
+                    <p>
+                        <span>
+                            Rerunning the query, we can see the newly indexed rows in the query under the <code>key</code> column. Under the <code>rows</code> column we can see the number of rows being queried has been reduced significantly compared the non-indexed query:
+                        </span>
+                    </p>
+                    <p style="text-align:center;"><img id="inline_image" src="assets/img/blog1image2.png"></p>
+
                     <h3 id="section6">Summary</h3>
                     <p>
                         <span>

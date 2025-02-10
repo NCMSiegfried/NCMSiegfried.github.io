@@ -11462,9 +11462,6 @@ article img{
     max-height:unset;
     width:100%;
   }
-  #inline_image {
-    width:90% !important;
-  }
 }
 .coded {
   border-radius:5px;
@@ -11490,5 +11487,6 @@ article img{
 }
 #inline_image {
     aspect-ratio:auto;
-    width:70%;
+    width:100%;
+    margin-bottom:1em;
 }
