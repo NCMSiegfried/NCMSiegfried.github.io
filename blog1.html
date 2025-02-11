@@ -39,7 +39,7 @@
                 </div>
                 <div class="title-flexbox">
                     <div class="title-flexbox-left">
-                        <p style="margin-bottom:0px;font-size:smaller;">Nikko Siegfried · Jan, 14 2025</p>
+                        <p style="margin-bottom:0px;font-size:smaller;">Nikko Siegfried · Feb, 10 2025</p>
                     </div>
                     <div class="title-flexbox-right">
                         <ul class="title-icons" style="margin-bottom:0px;">
@@ -76,7 +76,7 @@
                     </span>
                     <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; border-top: 1px solid; margin:0.5rem 0;"/>
                     <span class="nav-item">
-                        <a class="nav-link" href="#section6">Summary</a>
+                        <a class="nav-link" href="#section6">Conclusion</a>
                     </span>
                 </div>
                 <div class="article-writing">
@@ -603,7 +603,7 @@
                     </p>
                     <p style="text-align:center;"><img style="width:75% !important;" id="inline_image" src="assets/img/Bike_Shop_Database_Schema.jpg"></p>
                     <h5>Query Optimization</h5>
-                    <p>Let's start trying to query order data from a specific store:</p>
+                    <p>Let's start with a basic query trying to retrieve order data from a specific store:</p>
                     <div class="coded">
                         <p id="coded"><span id="coded-colored">SELECT</span> *</p>
                         <p id="coded"><span id="coded-colored">FROM</span> bike_store_sales.stores s</p>
@@ -613,7 +613,7 @@
                     </div>
                     <p>
                         <span>
-                            Using <code>EXPLAIN</code> we can get information of the query execution:
+                            Using <code>EXPLAIN</code>, we can get information of the query execution:
                         </span>
                     </p>
                     <p style="text-align:center;"><img id="inline_image" src="assets/img/blog1image1.png"></p>
@@ -629,20 +629,31 @@
                     </div>
                     <p>
                         <span>
-                            Rerunning the query, we can see the newly indexed rows in the query under the <code>key</code> column. Under the <code>rows</code> column we can see the number of rows being queried has been reduced significantly compared the non-indexed query:
+                            Rerunning <code>EXPLAIN</code> on the query, there are a few changes to note. Firstly, We can see the newly indexed rows in the query under the <code>key</code> column. The join type (under the <code>type</code> column) has also changed from "ALL" to "ref". This means the join went from fully scanning the whole table to only searching rows with matching index values - a much more efficient approach.
+                            Under the <code>rows</code> column we can see the number of rows being queried has been reduced significantly compared the non-indexed query:
                         </span>
                     </p>
                     <p style="text-align:center;"><img id="inline_image" src="assets/img/blog1image2.png"></p>
-
-                    <h3 id="section6">Summary</h3>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            Now that the tables are indexed, it is important to optimize the <code>JOIN</code> and <code>SELECT</code> portions of the query.
+                            We want to return rows that have matching values in both tables. This is already done with <code>JOIN</code>, but could be clearer syntactically using <code>INNER JOIN</code> (which does the same thing).
+                            The query currently returns all columns in both the stores and orders table - this returns unneeded information including many id columns. To clean up the query selection, we will also use <code>SELECT</code> only on the columns we need:
                         </span>
                     </p>
+                    <div class="coded">
+                        <p id="coded"><span id="coded-colored">SELECT</span> <mark>store_name, phone, email, street, city, order_status, order_date, shipped_date</mark></p>
+                        <p id="coded"><span id="coded-colored">FROM</span> bike_store_sales.stores s</p>
+                        <p id="coded"><span id="coded-colored"><mark>INNER</mark> JOIN</span> bike_store_sales.orders o</p>
+                        <p id="coded"><span id="coded-colored">ON</span> o.store_id = s.store_id</p>
+                        <p id="coded"><span id="coded-colored">WHERE</span> store_name = 'Santa Cruz Bikes';</p>
+                    </div>
+                    <h3 id="section6">Conclusion</h3>
                     <p>
                         <span>
-                            Knowing your personnel allows you to take a more active role in reading the room. No environment is perfect, but you can use what you’ve learned to create opportunities for improvement in areas that team leads may not be aware of or may not have the capacity to handle.
+                            MySQL is a powerful database management tool with high performance, scalability, data security, and an abundance of documentation and support.
+                            Learning MySQL can be a challenge, but being able to optimize performance is essential in getting the most out of the program.
+                            Hands-on experience, tutorials, and familiarizing yourself with the documentation is the best way to learn MySQL and fast-track yourself towards fluency.
                         </span>
                     </p>
                 </div>
