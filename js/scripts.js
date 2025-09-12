@@ -149,8 +149,8 @@ function gifOnHover(object, svg, gif){
         object.src = svg;
     });
 }
-
-gifOnHover(africaMap, africaMapStatic, africaMapGif);
+// Africa map removed from portfolio
+// gifOnHover(africaMap, africaMapStatic, africaMapGif);
 gifOnHover(duluthMap, duluthMapStatic, duluthMapGif);
 gifOnHover(interstateMap, interstateMapStatic, interstateMapGif);
 gifOnHover(sfFilmsMap, sfFilmsMapStatic, sfFilmsMapGif);
