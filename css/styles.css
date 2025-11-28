@@ -11374,6 +11374,9 @@ span.finished {
   .article-writing{
     width:100% !important;
   }
+  .flex-shrink-0{
+    display:none;
+  }
 }
 .article{
     padding-left:2rem;
