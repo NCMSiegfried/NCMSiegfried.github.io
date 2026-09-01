@@ -3,9 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta name="description" content="Portfolio of Nikko Siegfried, a GIS Specialist focused on spatial analysis, automation, and data visualization." />
+        <meta name="author" content="Nikko Siegfried" />
         <title>Nikko Siegfried | Portfolio</title>
+        <!-- Open Graph / social sharing -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Nikko Siegfried | Portfolio" />
+        <meta property="og:description" content="Portfolio of Nikko Siegfried, a GIS Specialist focused on spatial analysis, automation, and data visualization." />
+        <meta property="og:url" content="https://ncmsiegfried.github.io/" />
+        <meta property="og:image" content="https://ncmsiegfried.github.io/assets/img/IMG_1428.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Nikko Siegfried | Portfolio" />
+        <meta name="twitter:description" content="Portfolio of Nikko Siegfried, a GIS Specialist focused on spatial analysis, automation, and data visualization." />
+        <meta name="twitter:image" content="https://ncmsiegfried.github.io/assets/img/IMG_1428.jpeg" />
          <!-- Font Awesome CSS -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
         <!-- Favicon-->
@@ -37,22 +47,22 @@
             </div>
         </nav>
         <!-- Masthead-->
-        <header class="masthead">
+        <div class="masthead">
             <div class="container px-4 px-lg-5 h-100">
-                <div class="row gx-4 gx-lg-5 h-50 align-items-center justify-content-center text-center">
+                <header class="row gx-4 gx-lg-5 h-50 align-items-center justify-content-center text-center">
                         <div class="col-lg-8 align-self-end">
-                            <h1 style="font-size: 6rem !important;" class="text-white font-weight-bold">
+                            <h1 class="text-white font-weight-bold">
                                 <span-initial aria-hidden="true"></span-initial>
                             </h1>
                             <hr style="border-color:rgba(255, 255, 255, 0.85);" class="divider" />
                             <p class="text-white mb-5" id="animate">Welcome to my portfolio website.</p>
                         </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <a class="btn btn-primary btn-xl" style="border:3px solid white;"href="#about">More About Me</a>
+                        <a class="btn btn-primary btn-xl btn-bordered" href="#about">More About Me</a>
                     </div>
-                </div>
+                </header>
                 <!-- About-->
-                <div class="container px-4 px-lg-5 h-50" id="about">
+                <section class="container px-4 px-lg-5 h-50" id="about">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" style="background:inherit">
                     <div class="pg1-container blurred-box">
                           <div class="about-me-image-container">
@@ -79,283 +89,279 @@
                         </div>
                     </div>
                 </div>
+            </section>
             </div>
-            </div>
-        </header>
+        </div>
         <!-- Projects-->
         <section class="page-section" id="projects">
-            <h1 style="font-size: 3.2rem;">Projects</h1>
+            <h2 class="section-heading">Projects</h2>
             <hr>
             <br/>
             <div class="project-container">
-                <div class="box">
-                    <a href="projects/San_Francisco_Films_Map/map.html" target="_blank">
-                        <img src="assets/svg/SF Films Map.svg" class="project-img" id="sfFilmsImage">
-                    </a>
-                    <p>San Francisco Films Web Map</p>
-                    <hr>
-                    <p><strong>Format:</strong> Web Map</p>
-                    <p><strong>Languages Used:</strong> Javascript, Python, HTML5/CSS</p>
-                    <p><strong>Software/Tools Used:</strong> Leaflet, MapBox Geocoding API, relational DB structure, Bing image downloader python package</p>
-                </div>
-                <div class="box">
-                    <a href="https://arcg.is/1qLCiG" target="_blank">
-                        <img src='assets/svg/Duluth Land Analysis.svg' class="project-img" id="duluthImage">
-                    </a>
-                    <p>Downtown Duluth Underutilized Land Potential</p>
-                    <hr>
-                    <p><strong>Format:</strong> ESRI Story Map</p>
-                    <p><strong>Languages Used:</strong> Python</p>
-                    <p><strong>Software/Tools Used:</strong> Adobe Illustrator, ArcGIS Pro, ESRI Story Maps, financial insights</p>
-                </div>
-                <div class="box">
-                    <a href="projects/578_final_presentation.pdf" target="_blank">
-                        <img src='assets/svg/Interstate Topology Urban Morphology.svg' alt="Image 1" class="project-img" id="interstatetopImage">
-                    </a>
-                    <p>Interstate Topology and Urban Morphology</p>
-                    <hr>
-                    <p><strong>Format:</strong> PDF Presentation</p>
-                    <p><strong>Languages Used:</strong> Python</p>
-                    <p><strong>Software/Tools Used:</strong> ArcGIS Pro, Matplotlib</p>
-                </div>
+                <a class="box" href="projects/San_Francisco_Films_Map/map.html" target="_blank">
+                    <div class="project-thumb">
+                        <img src="assets/svg/SF Films Map.svg" class="project-img" id="sfFilmsImage" alt="San Francisco Films Web Map">
+                        <span class="project-format">Web Map</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">San Francisco Films Web Map</h3>
+                        <div class="project-meta">
+                            <div class="project-meta-group">
+                                <div class="project-meta-label">Languages</div>
+                                <ul class="project-tags">
+                                    <li>JavaScript</li>
+                                    <li>Python</li>
+                                    <li>HTML5/CSS</li>
+                                </ul>
+                            </div>
+                            <div class="project-meta-group">
+                                <div class="project-meta-label">Tools</div>
+                                <ul class="project-tags">
+                                    <li>Leaflet</li>
+                                    <li>MapBox Geocoding API</li>
+                                    <li>Relational DB</li>
+                                    <li>Bing Image Downloader</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="box" href="https://arcg.is/1qLCiG" target="_blank">
+                    <div class="project-thumb">
+                        <img src="assets/svg/Duluth Land Analysis.svg" class="project-img" id="duluthImage" alt="Downtown Duluth Underutilized Land Potential">
+                        <span class="project-format">ESRI Story Map</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Downtown Duluth Underutilized Land Potential</h3>
+                        <div class="project-meta">
+                            <div class="project-meta-group">
+                                <div class="project-meta-label">Languages</div>
+                                <ul class="project-tags">
+                                    <li>Python</li>
+                                </ul>
+                            </div>
+                            <div class="project-meta-group">
+                                <div class="project-meta-label">Tools</div>
+                                <ul class="project-tags">
+                                    <li>Adobe Illustrator</li>
+                                    <li>ArcGIS Pro</li>
+                                    <li>ESRI Story Maps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="box" href="projects/578_final_presentation.pdf" target="_blank">
+                    <div class="project-thumb">
+                        <img src="assets/svg/Interstate Topology Urban Morphology.svg" class="project-img" id="interstatetopImage" alt="Interstate Topology and Urban Morphology">
+                        <span class="project-format">PDF Presentation</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Interstate Topology and Urban Morphology</h3>
+                        <div class="project-meta">
+                            <div class="project-meta-group">
+                                <div class="project-meta-label">Languages</div>
+                                <ul class="project-tags">
+                                    <li>Python</li>
+                                </ul>
+                            </div>
+                            <div class="project-meta-group">
+                                <div class="project-meta-label">Tools</div>
+                                <ul class="project-tags">
+                                    <li>ArcGIS Pro</li>
+                                    <li>Matplotlib</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
             <br/>
-            <h2 style="font-size: 3.2rem;">Writings</h2>
+            <h2 class="section-heading">Writings</h2>
             <hr>
             <br/>
             <div class="project-container">
-                <div class="box">
-                    <a href="blog1.html" target="_blank">
-                    <img src="assets/svg/MySQL.svg" alt="Image 1" class="project-img">
-                    </a>
-                    <p>MySQL Performance Tuning</p>
-                    <hr>
-                    <p>Strategies to measure and improve My SQL performance using a bike shop dataset</p>
-                </div>
+                <a class="box" href="blog1.html" target="_blank">
+                    <div class="project-thumb">
+                        <img src="assets/svg/MySQL.svg" class="project-img" alt="MySQL Performance Tuning">
+                        <span class="project-format">Article</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">MySQL Performance Tuning</h3>
+                        <p class="project-desc">Strategies to measure and improve MySQL performance using a bike shop dataset.</p>
+                    </div>
+                </a>
             </div>
             <br/>
-            <h2 style="font-size: 3.2rem;">In the Works</h2>
+            <h2 class="section-heading">In the Works</h2>
             <hr>
             <br/>
             <div class="project-container">
-                <div class="box">
-                    <a href="" target="_blank">
-                    <img src="assets/svg/Playing Cards.svg" alt="Image 1" class="project-img">
-                    </a>
-                    <p>Cribbage Game</p>
-                    <hr>
-                    <p><strong>Format:</strong> Web Game</p>
+                <div class="box box--static">
+                    <div class="project-thumb">
+                        <img src="assets/svg/Playing Cards.svg" class="project-img" alt="Cribbage Game">
+                        <span class="project-format">Web Game</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Cribbage Game</h3>
+                    </div>
                 </div>
-                <div class="box">
-                    <a href="https://github.com/NCMSiegfried/Los-Angeles-Housing-Project" target="_blank">
-                    <img src="assets/svg/LA Housing Model.svg" alt="Image 2" class="project-img">
-                    </a>
-                    <p>Predictive Model for Single Family Homes in Los Angeles</p>
-                    <hr>
-                    <p><strong>Format:</strong> TBD</p>
-                </div>
+                <a class="box" href="https://github.com/NCMSiegfried/Los-Angeles-Housing-Project" target="_blank">
+                    <div class="project-thumb">
+                        <img src="assets/svg/LA Housing Model.svg" class="project-img" alt="Predictive Model for Single Family Homes in Los Angeles">
+                        <span class="project-format">TBD</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Predictive Model for Single Family Homes in Los Angeles</h3>
+                    </div>
+                </a>
             </div>
         </section>
         <!-- Resume-->
         <section class="page-section bg-dark text-white" id="resume">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4" style="font-size: 3.2rem;">Resume</h2>
-                <hr style="border-top: 3px solid white;"/>
-                <p class="mb-5" style="color:#D3D3D3; padding-left:10%; padding-right:10%; font-weight:100;">An experienced GIS professional focused on building a strong technical background in detail-oriented analysis, automation, and data visualization. Works closely with people in diverse professional backgrounds to implement accurate and innovative GIS solutions.</p>
-            </div>
-            <div class="experience-section-content-container">
-                <div class="experience-section-content">
-                <h2 class="mb-4" style="color:#222222">Work Experience</h2>
-            <div class="experience-container">
-                <div class="flex-grow-1 text-left">
-                    <h3 class="mb-0" style="color:#222222">GIS Specialist</h3>
-                    <div class="subheading text-muted mb-3">Westwood Professional Services</div>
-                    <ul class="fa-ul mb-5 resume-content text-muted">
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Used <strong style="font-weight:600;">Python</strong> and <strong style="font-weight:600;">Model Builder</strong> scripts to automate collection, standardization, analysis, and uploading of large and often uncleaned spatial data
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Organized and maintained data using both <strong style="font-weight:600;">ArcGIS Enterprise</strong> and <strong style="font-weight:600;">ArcGIS Online</strong> while regularly pulling data using the <strong style="font-weight:600;">ArcGIS REST API</strong>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Constructed technical reports, presentations, and planning documents related to engineering and survey projects
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Learned new software such as <strong style="font-weight:600;">Survey123</strong> and <strong style="font-weight:600;">VertiGIS</strong> Studio to collect and deploy spatial data
-                        </li>
-                    </ul>
+            <div class="container px-4 px-lg-5">
+                <div class="text-center">
+                    <h2 class="mb-4 section-heading">Resume</h2>
+                    <hr class="resume-rule" />
+                    <p class="resume-summary">An experienced GIS professional focused on building a strong technical background in detail-oriented analysis, automation, and data visualization. Works closely with people in diverse professional backgrounds to implement accurate and innovative GIS solutions.</p>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary text-muted">October 2023 - Present</span></div>
-            </div>
-            <div class="experience-container">
-                <div class="flex-grow-1 text-left">
-                    <h3 class="mb-0" style="color:#222222">GIS Intern</h3>
-                    <div class="subheading mb-3 text-muted">State Cartographer's Office</div>
-                    <ul class="fa-ul mb-5 resume-content text-muted">
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Collaborate in a team of four to create a high-resolution flood and exposure vulnerability map for Ashland County in northern Wisconsin
+
+                <div class="resume-block">
+                    <h3 class="resume-group-title">Work Experience</h3>
+                    <ol class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-title">GIS Specialist</div>
+                            <div class="timeline-meta"><span class="timeline-org"><a class="org-link" href="https://www.camsys.com" target="_blank" rel="noopener">Cambridge Systematics, Inc.</a></span> &middot; November 2025 &ndash; Present</div>
                         </li>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Populated, organized, and managed a multi-layer geodatabase used for hazard mitigation, resource allocation, vulnerability assessments
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Develop a survey for regional leaders and emergency managers to assess areas of need in flood exposure vulnerability analysis
+                        <li class="timeline-item">
+                            <div class="timeline-title">GIS Specialist</div>
+                            <div class="timeline-meta"><span class="timeline-org"><a class="org-link" href="https://westwoodps.com" target="_blank" rel="noopener">Westwood Professional Services</a></span> &middot; November 2023 &ndash; October 2025</div>
+                            <ul class="timeline-points">
+                                <li>Used <strong>Python</strong> and <strong>Model Builder</strong> scripts to automate collection, standardization, analysis, and uploading of large and often uncleaned spatial data</li>
+                                <li>Organized and maintained data using both <strong>ArcGIS Enterprise</strong> and <strong>ArcGIS Online</strong> while regularly pulling data using the <strong>ArcGIS REST API</strong></li>
+                                <li>Constructed technical reports, presentations, and planning documents related to engineering and survey projects</li>
+                                <li>Learned new software such as <strong>Survey123</strong> and <strong>VertiGIS</strong> Studio to collect and deploy spatial data</li>
+                            </ul>
                         </li>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Actively contributed to team planning and execution, applying <strong style="font-weight:600;">relational database structure organization</strong> using defined keys
+                        <li class="timeline-item">
+                            <div class="timeline-title">GIS Intern</div>
+                            <div class="timeline-meta"><span class="timeline-org"><a class="org-link" href="https://www.sco.wisc.edu" target="_blank" rel="noopener">State Cartographer's Office</a></span> &middot; October 2022 &ndash; May 2023</div>
+                            <ul class="timeline-points">
+                                <li>Collaborate in a team of four to create a high-resolution flood and exposure vulnerability map for Ashland County in northern Wisconsin</li>
+                                <li>Populated, organized, and managed a multi-layer geodatabase used for hazard mitigation, resource allocation, vulnerability assessments</li>
+                                <li>Develop a survey for regional leaders and emergency managers to assess areas of need in flood exposure vulnerability analysis</li>
+                                <li>Actively contributed to team planning and execution, applying <strong>relational database structure organization</strong> using defined keys</li>
+                            </ul>
                         </li>
-                    </ul>
+                        <li class="timeline-item">
+                            <div class="timeline-title">GIS Intern</div>
+                            <div class="timeline-meta"><span class="timeline-org"><a class="org-link" href="https://highroad.wisc.edu" target="_blank" rel="noopener">High-Road Strategy Center</a></span> &middot; June 2022 &ndash; May 2023</div>
+                            <ul class="timeline-points">
+                                <li>Collaborated with a team of academics and students to create a municipal financial analysis report promoting more efficient and equitable development</li>
+                                <li>Collected, cleaned, and analyzed datasets for 18 municipalities to construct <strong>3-D financial analysis visualizations</strong></li>
+                                <li>Managed and automated analysis implementing geodatabases and <strong>ModelBuilder</strong></li>
+                                <li>Researched data analysis and presentation methods related to spatial municipal analysis</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary text-muted">October 2022 - May 2023</span></div>
-            </div>
-            <div class="experience-container">
-                <div class="flex-grow-1 text-left">
-                    <h3 class="mb-0" style="color:#222222">GIS Intern</h3>
-                    <div class="subheading mb-3 text-muted">High-Road Strategy Center</div>
-                    <ul class="fa-ul mb-5 resume-content text-muted">
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Collaborated with a team of academics and students to create a municipal financial analysis report promoting more efficient and equitable development
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Collected, cleaned, and analyzed datasets for 18 municipalities to construct <strong style="font-weight:600;">3-D financial analysis visualizations</strong>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Managed and automated analysis implementing geodatabases and <strong style="font-weight:600;">ModelBuilder</strong>
-                        </li>
-                        <li>
-                            <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                            Researched data analysis and presentation methods related to spatial municipal analysis
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex-shrink-0"><span class="text-primary text-muted">June 2022 - May 2023</span></div>
-            </div>
-        </div>
-            </div>
-            <hr class="divider" style="border-color:#6c757d"/>
-            <div class="experience-section-content-container">
-                <div class="experience-section-content">
-                <h2 class="mb-4" style="color:#222222">Skills</h2>
-                <div class="experience-container">
-                    <div class="flex-grow-1 text-left">
-                        <div class="subheading mb-3 text-muted">GIS-Specific</div>
-                        <ul class="fa-ul mb-5 resume-content text-muted">
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                ArcGIS Pro | ArcGIS Enterprise | ModelBuilder | ArcGIS Online | Esri StoryMaps | QGIS | VertiGIS Studio | Survey123 | Global Mapper
-                            </li>
-                        </ul>
-                        <div class="subheading mb-3 text-muted">Other Software</div>
-                        <ul class="fa-ul mb-5 resume-content text-muted">
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                MySQL | Microsoft Products (Excel, Word, Powerpoint, Outlook, Teams) | git & GitHub | Adobe Illustrator
-                            </li>
-                        </ul>
-                        <div class="subheading mb-3 text-muted">Programming Languages</div>
-                        <ul class="fa-ul mb-5 resume-content text-muted">
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">Python</strong>
-                                    <ul class="fa-ul resume-content text-muted">
-                                        <li>
-                                            <span class="fa-li"><i class="fa-solid fa-minus fa-2xs"></i></span>
-                                            Arcpy | Geopandas | GDAL | Pandas | NumPy | scikit-learn | Matplotlib | Seaborn | RegEx
-                                        </li>
-                                    </ul>
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">Javascript</strong>
-                                    <ul class="fa-ul resume-content text-muted">
-                                        <li>
-                                            <span class="fa-li"><i class="fa-solid fa-minus fa-2xs"></i></span>
-                                            Leaflet | Mapbox GL | JQuery
-                                        </li>
-                                    </ul>
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">HTML5/CSS</strong>
-                                    <ul class="fa-ul resume-content text-muted">
-                                        <li>
-                                            <span class="fa-li"><i class="fa-solid fa-minus fa-2xs"></i></span>
-                                            Bootstrap
-                                        </li>
-                                    </ul>
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">R & RStudio</strong>
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">SQL</strong>
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">Arcade</strong>
-                            </li>
+
+                <div class="resume-block">
+                    <h3 class="resume-group-title">Skills</h3>
+                    <div class="skill-group">
+                        <div class="skill-label">GIS-Specific</div>
+                        <ul class="skill-tags">
+                            <li>ArcGIS Pro</li>
+                            <li>ArcGIS Enterprise</li>
+                            <li>ModelBuilder</li>
+                            <li>ArcGIS Online</li>
+                            <li>Esri StoryMaps</li>
+                            <li>QGIS</li>
+                            <li>VertiGIS Studio</li>
+                            <li>Survey123</li>
+                            <li>Global Mapper</li>
                         </ul>
                     </div>
-                </div>
-            </div>
-            </div>
-            <hr class="divider" style="border-color:#6c757d"/>
-            <div class="experience-section-content-container">
-                <div class="experience-section-content">
-                <h2 class="mb-4" style="color:#222222">Education</h2>
-                <div class="experience-container">
-                    <div class="flex-grow-1 text-left">
-                        <h3 class="mb-0" style="color:#222222">University of Wisconsin - Madison</h3>
-                        <div class="subheading mb-3 text-muted">Majors</div>
-                        <ul class="fa-ul mb-5 resume-content text-muted">
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                Cartography and Geographic Information Systems (B.S.)
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                Physical Geography: Earth Systems and Environmental Processes (B.S.)
-                        </ul>
-                        <div class="subheading mb-3 text-muted">Certificate</div>
-                        <ul class="fa-ul mb-5 resume-content text-muted">
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                Environmental Studies
-                            </li>
-                        </ul>
-                        <div class="subheading mb-3 text-muted">Related Coursework</div>
-                        <ul class="fa-ul mb-5 resume-content text-muted">
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">Advanced GeoComputing and Geospatial Big Data Analytics</strong> - Learned new ways to store, process, and analyze geospatial data using python. Utilized different APIs including Flickr, Google Earth Engine, Geemap, and more.
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">Data Science Programming II</strong> - Learned to create tree and graph data structures to represent hierarchical data and implement algorithms for efficiently searching these structures. Learned and utilized techniques like logging, benchmarking, web scraping, and A/B testing.
-                            </li>
-                            <li>
-                                <span class="fa-li"><i class="point-circle fa-regular fa-circle"></i></span>
-                                <strong style="font-weight:600;">Environmental Remote Sensing</strong> - Learned techniques for lidar data visualizations and processing. Utilized machine learning, post-processing, object-based analysis, and accuracy assessments on remote sensing imagery.
-                            </li>
+                    <div class="skill-group">
+                        <div class="skill-label">Other Software</div>
+                        <ul class="skill-tags">
+                            <li>MySQL</li>
+                            <li>Excel</li>
+                            <li>Word</li>
+                            <li>PowerPoint</li>
+                            <li>Outlook</li>
+                            <li>Teams</li>
+                            <li>git &amp; GitHub</li>
+                            <li>Adobe Illustrator</li>
                         </ul>
                     </div>
-                    <div class="flex-shrink-0"><span class="text-primary text-muted">May 2023</span></div>
+                    <div class="skill-group">
+                        <div class="skill-label">Programming Languages</div>
+                        <div class="skill-lang">
+                            <span class="skill-lang-name">Python</span>
+                            <ul class="skill-tags skill-subtags">
+                                <li>Arcpy</li>
+                                <li>Geopandas</li>
+                                <li>GDAL</li>
+                                <li>Pandas</li>
+                                <li>NumPy</li>
+                                <li>scikit-learn</li>
+                                <li>Matplotlib</li>
+                                <li>Seaborn</li>
+                                <li>RegEx</li>
+                            </ul>
+                        </div>
+                        <div class="skill-lang">
+                            <span class="skill-lang-name">JavaScript</span>
+                            <ul class="skill-tags skill-subtags">
+                                <li>Leaflet</li>
+                                <li>Mapbox GL</li>
+                                <li>jQuery</li>
+                            </ul>
+                        </div>
+                        <div class="skill-lang">
+                            <span class="skill-lang-name">HTML5/CSS</span>
+                            <ul class="skill-tags skill-subtags">
+                                <li>Bootstrap</li>
+                            </ul>
+                        </div>
+                        <div class="skill-lang">
+                            <span class="skill-lang-name">R &amp; RStudio</span>
+                        </div>
+                        <div class="skill-lang">
+                            <span class="skill-lang-name">SQL</span>
+                        </div>
+                        <div class="skill-lang">
+                            <span class="skill-lang-name">Arcade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resume-block">
+                    <h3 class="resume-group-title">Education</h3>
+                    <ol class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-title"><a class="org-link" href="https://www.wisc.edu" target="_blank" rel="noopener">University of Wisconsin &ndash; Madison</a></div>
+                            <div class="timeline-meta">May 2023</div>
+                            <div class="skill-label">Majors</div>
+                            <ul class="timeline-points">
+                                <li>Cartography and Geographic Information Systems (B.S.)</li>
+                                <li>Physical Geography: Earth Systems and Environmental Processes (B.S.)</li>
+                            </ul>
+                            <div class="skill-label">Certificate</div>
+                            <ul class="timeline-points">
+                                <li>Environmental Studies</li>
+                            </ul>
+                            <div class="skill-label">Related Coursework</div>
+                            <ul class="timeline-points">
+                                <li><strong>Advanced GeoComputing and Geospatial Big Data Analytics</strong> &mdash; Learned new ways to store, process, and analyze geospatial data using Python. Utilized different APIs including Flickr, Google Earth Engine, Geemap, and more.</li>
+                                <li><strong>Data Science Programming II</strong> &mdash; Learned to create tree and graph data structures to represent hierarchical data and implement algorithms for efficiently searching these structures. Learned and utilized techniques like logging, benchmarking, web scraping, and A/B testing.</li>
+                                <li><strong>Environmental Remote Sensing</strong> &mdash; Learned techniques for lidar data visualizations and processing. Utilized machine learning, post-processing, object-based analysis, and accuracy assessments on remote sensing imagery.</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
             </div>
-            </div>
-        <div class="col-lg-8 align-self-baseline" style="width:100%;">
-            <a class="btn btn-primary btn-xl" style="margin-top:5rem; border:3px solid white;" href="assets/pdf/Nikko_Siegfried_Resume01122025.pdf" target="_blank">Resume PDF</a>
-        </div>
         </section>
         <!-- Contact-->
         <section class="page-section" id="contact">

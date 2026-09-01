@@ -51,7 +51,10 @@
                 </div>
                 <hr style="border-color:rgba(0, 0, 0, 0.85); width:100%; margin-top:0px;"/>
             </header>
-            <img class="" src="assets/img/Japan.jpeg">
+            <figure class="header-figure">
+                <img src="assets/img/Japan.jpeg" alt="Wakayama Castle in Wakayama, Japan, December 2016">
+                <figcaption>Wakayama Castle &mdash; Wakayama, Japan &middot; December 2016</figcaption>
+            </figure>
             <div class="article-body">
                 <div class="article-sections article-sides">
                     <h5 style="margin-bottom: 1rem;">Table of Contents</h5>
@@ -133,7 +136,7 @@
                                     <b>MyISAM vs. InnoDB</b>
                                 </li>
                                 <li style="list-style-type: none;">
-                                        <table>
+                                        <div class="table-scroll"><table>
                                             <thead>
                                                 <tr>
                                                     <th></th>
@@ -215,7 +218,7 @@
                                                     <td>All other applications</td>
                                                 </tr>
                                             </tbody>
-                                        </table>
+                                        </table></div>
                                     </li>
                                 <li>
                                     <b>SSDs and HDDs</b> - SSDs are generally preferred due to greater data access speeds.
@@ -287,7 +290,7 @@
                                     query caching often boosts performance in repetitive queries
                                 </li>
                                 <li style="list-style-type: none;">
-                                    <table>
+                                    <div class="table-scroll"><table>
                                         <thead>
                                             <tr>
                                                 <th>Adjustment Variable</th>
@@ -307,13 +310,13 @@
                                                 <td>10% to 20% of total memory is recommended to start</td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table></div>
                                 </li>
                             </ul>
                         <li><h5>InnoDB Storage Engine Configuration</h5></li>
                             <ul>
                                 <li style="list-style-type: none;">
-                                    <table>
+                                    <div class="table-scroll"><table>
                                         <thead>
                                             <tr>
                                                 <th>Adjustment Variable</th>
@@ -358,7 +361,7 @@
                                                 <td>1 instance per 1GB of buffer pool size with a limit of 8</td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table></div>
                                 </li>
                             </ul>
                         <li><h5>Database Configuration</h5></li>
@@ -387,7 +390,7 @@
                                     <code>EXPLAIN</code> is used to get information about a query execution and returns the following column items:
                                 </li>
                                 <li style="list-style-type: none;">
-                                    <table>
+                                    <div class="table-scroll"><table>
                                         <thead>
                                             <tr>
                                                 <th>Column</th>
@@ -489,7 +492,7 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table></div>
                                 </li>
                             </ul>
                         <li><h5>Tracking Server Metrics</h5></li>
@@ -505,7 +508,7 @@
                                     <code>SHOW [GLOBAL|SESSION] STATUS;</code> returns a number of metrics including:
                                 </li>
                                 <li style="list-style-type: none;">
-                                    <table>
+                                    <div class="table-scroll"><table>
                                         <thead>
                                             <tr>
                                                 <th>Status Variable Category</th>
@@ -580,7 +583,7 @@
                                                 <td>Number of read requests to the InnoDB buffer pool</td>
                                             </tr>
                                         </tbody>
-                                    </table>
+                                    </table></div>
                                     <p style="font-size: smaller;">* Note: not all variables are covered in this table. CLick <a style="color: -webkit-link;" target="_blank" href="https://dev.mysql.com/doc/refman/5.7/en/server-status-variables.html">HERE</a> for a full list of server status variable explanations.</p>
                                 </li>
                             </ul>
