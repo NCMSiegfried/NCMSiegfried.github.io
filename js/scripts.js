@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
   // Wait for background image to load before starting animation
   waitForBackgroundImage(backgroundImageUrl, function() {
     setTimeout(function() {
-      StartTextAnimation(0);
+      if (document.querySelector("h1")) StartTextAnimation(0); // hero only
 
       // Add the slide-in animation
       const animatedElement = document.getElementById("animate");
@@ -140,6 +140,7 @@ window.addEventListener('DOMContentLoaded', event => {
 //CREATE A FUNCTION THAT MAKES IMAGE TURN INTO GIF ON HOVER
 //INPUTS: OBJECT ID, SVG VARIABLE, GIF VARIABLE
 function gifOnHover(object, svg, gif){
+    if (!object) return; // element not present on this page
     object.addEventListener('mouseenter', () => {
         object.src = gif;
     });
